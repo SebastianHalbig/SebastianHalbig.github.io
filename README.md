@@ -1,2 +1,1 @@
-# outreach
-On this website you can find everything about me that I find worth sharing.
+# Welcome to my website. In the future you can find here everything about my research and teaching.
