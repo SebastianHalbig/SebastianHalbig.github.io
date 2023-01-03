@@ -1,0 +1,32 @@
+#+title:
+
+* About
+arxiv
+orcid
+zbmath
+
+* Research
+
+My research lives at the intersection between representation theory and category theory.
+
+concerns ~ ~, ~ ~ and ~ ~.
+
+** Preprints
+** Published articles
+
+* Talks
+** 2023
+** 2022
+** 2021
+** 2020
+** 2019
+
+* Teaching
+** 2023
+** 2022
+** 2021
+** 2020
+** 2019
+** 2018
+** 2017
+** 2016
