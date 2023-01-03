@@ -13,7 +13,7 @@ My research lives at the intersection of three areas:
 
 
 Preprints of articles by my coauthors and me can be found on the [[https://arxiv.org/search/?query=Halbig%2C+Sebastian&searchtype=author&abstracts=show&order=-announced_date_first&size=50][arXiv]].
-Reviews and an overview of all published articles is on [[https://zbmath.org/authors/halbig.sebastian][zbMATH]].
+Reviews and an overview of all published articles are on [[https://zbmath.org/authors/halbig.sebastian][zbMATH]].
 
 * Publications
 
