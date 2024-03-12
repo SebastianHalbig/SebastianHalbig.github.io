@@ -3,24 +3,392 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-01-03 Tue 22:09 -->
+<!-- 2024-03-12 Tue 18:14 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Sebastian Halbigs webpage</title>
+<title>Sebastian Halbig</title>
 <meta name="author" content="Sebastian Halbig" />
 <meta name="generator" content="Org Mode" />
-<link rel="stylesheet" type="text/css" href="style.css" />
+<style type="text/css">
+<!--/*--><![CDATA[/*><!--*/
+/*
+ * Cascading stylesheet for GNU Emacs org mode
+ * Based on a stylesheet by Nicolas P. Rougier
+ * Released under a Creative Commons CC-BY 4.0 licence
+ */
+
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,500');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400;1,500&display=swap');
+
+
+body {
+    font-family: "Fira Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    color:  #424451; /*greyish-black*/
+    background: #fbfdf8; /*greenish-white*/
+    line-height: 1.1em;
+    counter-reset: section;
+    counter-reset: toc-section;
+    counter-increment: toc-section;
+}
+
+a, a:visited {
+    text-decoration: none;
+    color: #475da0; /*Indigo blue */
+}
+.org-bold {
+    font-weight: 500;
+}
+i, i a {
+    font-style: italic;
+}
+
+b {
+    font-weight: 400;
+}
+
+.org-italic, .org-org-meta-line {
+    color: rgba(48,63,159, 0.75);
+    font-style: normal;
+}
+.org-face-salient {
+    font-weight: 400;
+}
+
+.underline {
+    text-decoration:
+        underline; }
+
+/* Blinking cursor when strike-through */
+.custom {animation: blinker 1s linear infinite; }
+@keyframes blinker { 50% { opacity: 0; } }
+
+
+/* --- Side notes --- */
+div.side-note::before {
+    content: "Note";
+    color: rgba(0,0,0,.75);
+    font-weight: 400;
+}
+
+div.side-note {
+    color: rgba(0,0,0,.5);
+    float: left;
+    font-size: 85%;
+    line-height: 1.25em;
+    margin-left: -24em;
+    width: 20em;
+}
+
+/* --- Table of contents --- */
+#table-of-contents {
+    padding-top: 0em;
+    margin-top: 0em;
+    text-transform: uppercase;
+}
+
+#text-table-of-contents{
+    column-count: 3;
+    column-gap: 40px;
+}
+
+#table-of-contents ul {
+    padding: 0;
+    font-weight: 400;
+    counter-reset: list 0;
+    margin-top: 0em;
+}
+
+#table-of-contents ul  ul {
+    padding-left:0em;
+    font-weight: 300;
+    font-size: 95%;
+    line-height: 1.5em;
+    padding-left: 3em;
+}
+
+#table-of-contents h2:before {
+    content: "";
+    counter-reset: section;
+}
+
+#table-of-contents ul li {
+    vertical-align: top;
+    display: inline-block;
+    width: 75%;
+    margin-bottom: 1em;
+}
+
+#table-of-contents ul li:before {
+    display: inline-block;
+    counter-increment: list;
+    width: 2.0em;
+    margin-left: -2.0em;
+    text-align: right;
+    text-transform: uppercase;
+    color: #475da0; /*Indigo blue */
+}
+
+#table-of-contents ul li ul,
+#table-of-contents ul li ul li {
+    display: static;
+    width: 100%;
+    padding-left: 8px;
+    line-height: 1.35em;
+    margin-bottom: 0em;
+}
+
+#table-of-contents ul li ul li:before {
+    content: ""
+}
+
+#table-of-contents h2 {
+    font-size: 100%;
+    font-weight: 400;
+    padding-top: 5em;
+}
+
+#table-of-contents ul li a span {
+    display: none;
+}
+
+#table-of-contents ul li a code {
+    display: none;
+}
+
+blockquote {
+    color: #110d32; /*scotch-blue*/
+    padding-top: 0;
+    margin-left: 1em;
+    padding-left: 1em;
+    border-left: 3px solid #110d32; /*scotch-blue*/
+    font-style: italic;
+}
+
+.org-right {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.org-left {
+    margin-left: 0px;
+    margin-right: auto;
+    text-align: left;
+    padding-left: 10px;
+    border-style: none none none dashed;
+    border-width: 1px
+}
+.org-center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; }
+
+ul.org-ul {
+    padding-left: 2em
+
+}
+ul.org-ul li  {
+    list-style-type: circle;
+    margin-bottom: .5em;
+}
+
+ul.org-ul li p {
+    display: inline-block;
+    margin-top: 0em;
+    margin-bottom: 0em;
+}
+
+ol.org-ol {
+    padding-left: 0;
+    margin-left: 2em;
+    list-style: none;
+    counter-reset: li;
+}
+.org-ol li  {
+    counter-increment: li;
+    margin-bottom: .25em;
+}
+.org-ol li::before {
+    content: counter(li) ". ";
+    color: #828d96; /*greenish-grey*/
+    display: inline-block;
+    width: 2em;
+    margin-left: -2em;
+}
+
+h1.title {
+    font-size: 150%;
+    margin-top: 4em;
+    margin-bottom: 0em;
+    font-weight: 400;
+    text-align: center;
+}
+
+span.subtitle {
+    display: inline-block;
+    margin-top: .25em;
+    font-size: 75%;
+    font-weight: 300;
+    color: #828d96; /*greenish-grey*/
+}
+
+h1:not(.title), h2 {
+    padding-bottom: 0.2em;
+    border-bottom: 3px solid #d1d8dd; /*french wood ashes*/
+}
+
+h1, h2, h3, h4 {
+    color: #110d32; /*scotch-blue*/;
+    font-size: 100%;
+    font-weight: 400;
+    /* font-variant: all-small-caps; */
+    text-transform: uppercase;
+    text-align: left;
+}
+
+h2, h3 {
+    padding-top: 1em;
+}
+
+[class^="section-number"] {
+    display: none;
+}
+
+body {
+    counter-reset: section;
+}
+
+h2 {
+    counter-reset: subsection;
+}
+
+h2::before, h3::before {
+    color: #424451; /*greyish-black*/
+    float: left;
+    text-align: right;
+    font-weight: 350;
+}
+
+h2::before {
+    width: 7.5em;
+    margin-left: -8.0em;
+}
+
+h3::before {
+    width: 2.5em;
+    margin-left: -3.0em;
+}
+
+
+span.meek{
+    color: #706F6F;
+}
+
+span.urgent{
+    color: #d65848; /*aurora-red*/
+}
+span.boxed-text{
+    background-color: #d1d8dd /*french wood ashes*/
+}
+
+.src{
+    font-family: Roboto Mono;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: #f9f8f5; /*greenish-white*/
+    font-size: 90%;
+    margin-left: 1em;
+    padding-left: 1em;
+    border-left: 3px solid #d1d8dd; /*french wood ashes*/
+    font-weight: 400;
+}
+
+/* --- Table --- */
+table { min-width: 100%; }
+table, tbody, td, tr, th, colgroup, thead {
+    border: 0;
+    /*    padding: 0;*/
+}
+table {
+    margin-top: 2em;
+}
+thead {
+    border-bottom: 1px solid #110d32; /*scotch-blue*/;
+    padding-top: 0.25em;
+}
+th {
+    text-align: left;
+    font-weight: 400;
+    padding: 0;
+    margin-bottom: 0.25em;
+    padding-bottom: 0.25em;
+}
+
+td {
+    padding: 0;
+}
+
+tr:nth-child(even) {
+    background: #f0ede6; /*french wood ashes*/
+}
+
+tr:nth-child(odd) {
+}
+
+tbody {
+     border-bottom: 1px solid #110d32; /*scotch-blue*/;
+}
+
+/* tags and todos */
+
+.tag, .todo {
+    background-color: #f5f7f7;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-size: 100%;
+    font-weight: 300; }
+
+
+#content, #postamble {
+    margin-left: 10%;
+    margin-right: 15%;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+}
+
+#postamble p, #preamble p {
+    font-size: 90%;
+    margin: .2em;
+}
+
+#postamble {
+    /*    border-top: 1px solid #999999; */
+    padding-top: 1.5em;
+}
+#postamble p, #postamble a {
+    color: #999999;
+    line-height: 1.25em;
+    margin: 0;
+    text-align: right;
+}
+
+/*]]>*/-->
+</style>
 </head>
 <body>
 <div id="content" class="content">
-<h1 class="title">Sebastian Halbigs webpage</h1>
-
-<div id="outline-container-orgc6cba01" class="outline-2">
-<h2 id="orgc6cba01"><span class="section-number-2">1.</span> About me</h2>
+<h1 class="title">Sebastian Halbig</h1>
+<div id="outline-container-orga75d0cc" class="outline-2">
+<h2 id="orga75d0cc"><span class="section-number-2">1.</span> About me</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-Currently, I am a research assistant in the team of <a href="https://www.uni-marburg.de/en/fb12/research-groups/algeblie">Istvan Heckenberger</a> at the Philipps-Universität Marburg.
-Prior to that, I was a PhD student of <a href="https://tu-dresden.de/mn/math/geometrie/kraehmer/startseite">Ulrich Krähmer</a> at the TU Dresden.
+Currently, I am a research assistant in the team of <a href="https://www.uni-marburg.de/en/fb12/research-groups/algeblie">Istvan Heckenberger</a> at the Philipps-Universität Marburg. Prior to that, I was a PhD student of <a href="https://tu-dresden.de/mn/math/geometrie/kraehmer/startseite">Ulrich Krähmer</a> at the TU Dresden.
 </p>
 
 <p>
@@ -32,40 +400,41 @@ My research lives at the intersection of three areas:
 <li>low-dimensional topology.</li>
 </ul>
 
-
-
-
 <p>
-Preprints of articles by my coauthors and me can be found on the <a href="https://arxiv.org/search/?query=Halbig%2C+Sebastian&amp;searchtype=author&amp;abstracts=show&amp;order=-announced_date_first&amp;size=50">arXiv</a>.
-Reviews and an overview of all published articles is on <a href="https://zbmath.org/authors/halbig.sebastian">zbMATH</a>.
+You can reach me via mail: <a href="mailto:Sebastian.Halbig@uni-marburg.de">Sebastian.Halbig@uni-marburg.de</a>
 </p>
 </div>
 </div>
-
-<div id="outline-container-org70dad2e" class="outline-2">
-<h2 id="org70dad2e"><span class="section-number-2">2.</span> Publications</h2>
+<div id="outline-container-orgf6ac896" class="outline-2">
+<h2 id="orgf6ac896"><span class="section-number-2">2.</span> Publications</h2>
 <div class="outline-text-2" id="text-2">
+<p>
+Preprints of articles by my coauthors and me can be found on the <a href="https://arxiv.org/search/?query=Halbig%2C+Sebastian&amp;searchtype=author&amp;abstracts=show&amp;order=-announced_date_first&amp;size=50">arXiv</a>.
+Reviews and an overview of all published articles are on <a href="https://zbmath.org/authors/halbig.sebastian">zbMATH</a>.
+</p>
 </div>
-<div id="outline-container-orge6ffe5e" class="outline-3">
-<h3 id="orge6ffe5e"><span class="section-number-3">2.1.</span> Preprints</h3>
+<div id="outline-container-org769ff22" class="outline-3">
+<h3 id="org769ff22"><span class="section-number-3">2.1.</span> Preprints</h3>
 <div class="outline-text-3" id="text-2-1">
 <ol class="org-ol">
-<li>S. Halbig and T.Zorman. <code class="code">Pivotality, twisted centres and the anti-double of a Hopf monad</code>. (2022).</li>
+<li>S. Halbig and T.Zorman. <span class="meek">Duality in Monoidal Categories</span>. (2024).</li>
+<li>S. Halbig and T.Zorman. <span class="meek">Diagrammatics for Comodule Monads</span>. (2023).</li>
+<li>B. Femić and S. Halbig. <span class="meek">Categorical centers and Yetter–Drinfel`d-modules as 2-categorical (bi)lax structures</span>. (2023).</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org4aa20e6" class="outline-3">
-<h3 id="org4aa20e6"><span class="section-number-3">2.2.</span> Published articles</h3>
+<div id="outline-container-org62ca7b0" class="outline-3">
+<h3 id="org62ca7b0"><span class="section-number-3">2.2.</span> Published articles</h3>
 <div class="outline-text-3" id="text-2-2">
 <ol class="org-ol">
-<li>S. Halbig. <code class="code">Generalised Taft algebras and pairs in involution</code>. Commun. Algebra. (2021).</li>
-<li>S. Halbig and U. Krähmer <code class="code">A Hopf algebra without a modular pair in involution</code>. Geom. Methods in Physics XXXVII. (2019).</li>
+<li>S. Halbig and T.Zorman. <span class="meek">Pivotality, twisted centres and the anti-double of a Hopf monad</span>. Theory Appl. Categ. (2024).</li>
+<li>S. Halbig. <span class="meek">Generalised Taft algebras and pairs in involution</span>. Commun. Algebra. (2021).</li>
+<li>S. Halbig and U. Krähmer <span class="meek">A Hopf algebra without a modular pair in involution</span>. Geom. Methods in Physics XXXVII. (2019).</li>
 </ol>
 </div>
 </div>
-
-<div id="outline-container-orgbd30877" class="outline-3">
-<h3 id="orgbd30877"><span class="section-number-3">2.3.</span> Other publications</h3>
+<div id="outline-container-orga3b587e" class="outline-3">
+<h3 id="orga3b587e"><span class="section-number-3">2.3.</span> Other publications</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 A digital version of my PhD thesis can be found <a href="https://tud.qucosa.de/api/qucosa%3A80342/attachment/ATT-0/">here</a>.
@@ -73,110 +442,140 @@ A digital version of my PhD thesis can be found <a href="https://tud.qucosa.de/a
 </div>
 </div>
 </div>
-
-<div id="outline-container-orgbf26c4a" class="outline-2">
-<h2 id="orgbf26c4a"><span class="section-number-2">3.</span> Talks</h2>
+<div id="outline-container-org5200e9e" class="outline-2">
+<h2 id="org5200e9e"><span class="section-number-2">3.</span> Conferences, talks and research visits</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-orga2f220a" class="outline-3">
-<h3 id="orga2f220a"><span class="section-number-3">3.1.</span> 2023</h3>
+<div id="outline-container-org41fd7c1" class="outline-3">
+<h3 id="org41fd7c1"><span class="section-number-3">3.1.</span> 2024</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>29.04. - 03.05.2024 Research visit in <i>Bonn</i></li>
+<li>26.02. - 27.02.2024 Research visit in <i>Dresden</i></li>
+<li>19.02.2024 - 23.05.2024 Research visit in <i>Brno</i>
+<ul class="org-ul">
+<li>21.02.2024 Talk in the <i>Brno Algebra seminar:</i>  "Dualities in monoidal functor categories"</li>
+</ul></li>
+<li>28.01. - 02.02.2024 <i>Oberwolfach Mini-workshop:</i> "Bridging Number Theory and Nichols Algebras via Deformations"
+<ul class="org-ul">
+<li>02.02.2024 Talk: "Dualities in abelian monoidal functor categories"</li>
+</ul></li>
+</ul>
 </div>
-<div id="outline-container-org45aeb92" class="outline-3">
-<h3 id="org45aeb92"><span class="section-number-3">3.2.</span> 2022</h3>
+</div>
+<div id="outline-container-org0c3ac57" class="outline-3">
+<h3 id="org0c3ac57"><span class="section-number-3">3.2.</span> 2023</h3>
 <div class="outline-text-3" id="text-3-2">
-<p>
-30.05.2022 <i>Quantum groups seminar</i>
-"Pivotality, twisted centres and the anti-double of a Hopf monad"
-</p>
-
-<p>
-15.05.2022 <i>PSSL Brno</i>
-"Pivotality, twisted centres and the anti-double of a Hopf monad"
-</p>
-
-<p>
-12.05.2022 <i>Czech academy of sciences in Prague</i>
-"Pivotality, twisted centres and the anti-double of a Hopf monad"
-</p>
-
-<p>
-12.04.2022 <i>Universität Hamburg</i>
-"Pivotality, twisted centres and the anti-double of a Hopf monad"
-</p>
+<ul class="org-ul">
+<li>23.11. - 26.11.2023 <i>Factorisation homology seminar</i> in Dresden
+<ul class="org-ul">
+<li>Talks on the 24.11 and the 25.11</li>
+</ul></li>
+<li>20.10. - 22.10.2023 <i>Factorisation homology seminar</i> in Bonn</li>
+<li>04.09. - 06.09.2023 <i>Hopf days</i> in Brussels
+<ul class="org-ul">
+<li>04.09 Talk "Duality in monoidal categories"</li>
+</ul></li>
+<li>14.07. - 15.07.2023 Seminar on <i>Mackey functors</i> co-organised with T. Zorman</li>
+<li>02.07. - 08.07.2023 <i>Category Theory 2023</i> in Louvain-la-Neuve</li>
+<li>22.05. - 26.05.2023 Workshop <i>Hopf Algebras and Tensor Categories</i> in Marburg
+<ul class="org-ul">
+<li>23.05 Talk " Pairs in involution – From Hopf algebras to monoidal categories and back"</li>
+</ul></li>
+</ul>
 </div>
 </div>
-
-<div id="outline-container-org051e096" class="outline-3">
-<h3 id="org051e096"><span class="section-number-3">3.3.</span> 2021</h3>
+<div id="outline-container-orgac59503" class="outline-3">
+<h3 id="orgac59503"><span class="section-number-3">3.3.</span> 2022</h3>
 <div class="outline-text-3" id="text-3-3">
-<p>
-09.12.2021 <i>Czech academy of sciences in Prague</i>
-"Exploring the Kitaev lattice model"
-</p>
-
-<p>
-28.01.2021 <i>Promotionen und Postdocs in Darstellungstheorie (online)</i>
-"Generalised Taft algebras and pairs in involution"
-</p>
+<ul class="org-ul">
+<li>08.12. - 11.12.2022 Seminar on <i>Operads</i> in Bonn</li>
+<li>05.12. - 08.12.2022 Research visit in <i>Erlangen</i></li>
+<li>30.05.2022 <i>Quantum groups seminar</i>
+"Pivotality, twisted centres and the anti-double of a Hopf monad"</li>
+<li>15.05.2022 <i>PSSL Brno</i>
+"Pivotality, twisted centres and the anti-double of a Hopf monad"</li>
+<li>12.05.2022 <i>Czech academy of sciences in Prague</i>
+"Pivotality, twisted centres and the anti-double of a Hopf monad"</li>
+<li>12.04.2022 <i>Universität Hamburg</i>
+"Pivotality, twisted centres and the anti-double of a Hopf monad"</li>
+</ul>
 </div>
 </div>
-
-<div id="outline-container-org0076029" class="outline-3">
-<h3 id="org0076029"><span class="section-number-3">3.4.</span> 2020</h3>
+<div id="outline-container-orgf04d527" class="outline-3">
+<h3 id="orgf04d527"><span class="section-number-3">3.4.</span> 2021</h3>
 <div class="outline-text-3" id="text-3-4">
-<p>
-09.11.2020 <i>Geometric methods seminar Dresden</i>
-"Reconstruction of fusion categories"
-</p>
-
-<p>
-20.01,2020 <i>RWTH Aachen</i>
-"Generalised Taft algebras and pairs in involution"
-</p>
+<ul class="org-ul">
+<li>09.12.2021 <i>Czech academy of sciences in Prague</i>
+"Exploring the Kitaev lattice model"</li>
+<li>28.01.2021 <i>Promotionen und Postdocs in Darstellungstheorie (online)</i>
+"Generalised Taft algebras and pairs in involution"</li>
+</ul>
 </div>
 </div>
-
-<div id="outline-container-org9ea7986" class="outline-3">
-<h3 id="org9ea7986"><span class="section-number-3">3.5.</span> 2019</h3>
+<div id="outline-container-org2ff7adc" class="outline-3">
+<h3 id="org2ff7adc"><span class="section-number-3">3.5.</span> 2020</h3>
 <div class="outline-text-3" id="text-3-5">
-<p>
-16.12.2019 <i>Friedrich–Alexander University Erlangen</i>
-"Generalised Taft algebras and pairs in involution"
-</p>
-
-<p>
-30.09.2019 <i>Univerité Blaise–Pascal Clermont–Ferrand</i>
-"Generalised Taft algebras and pairs in involution"
-</p>
-
-<p>
-08.07.2019 <i>Phillips–Universität Marburg</i>
-"Generalised Taft algebras and pairs in involution"
-</p>
+<ul class="org-ul">
+<li>09.11.2020 <i>Geometric methods seminar Dresden</i>
+"Reconstruction of fusion categories"</li>
+<li>20.01.2020 <i>RWTH Aachen</i>
+"Generalised Taft algebras and pairs in involution"</li>
+</ul>
 </div>
 </div>
-
-<div id="outline-container-orgbda5f11" class="outline-3">
-<h3 id="orgbda5f11"><span class="section-number-3">3.6.</span> 2018</h3>
+<div id="outline-container-org171b450" class="outline-3">
+<h3 id="org171b450"><span class="section-number-3">3.6.</span> 2019</h3>
 <div class="outline-text-3" id="text-3-6">
-<p>
-19.11.2018 <i>Institute of mathematics of the Polish academy of sciences</i>
-"Generalised Taft algebras and pairs in involution"
-</p>
+<ul class="org-ul">
+<li>16.12.2019 <i>Friedrich–Alexander University Erlangen</i>
+"Generalised Taft algebras and pairs in involution"</li>
+<li>30.09.2019 <i>Univerité Blaise–Pascal Clermont–Ferrand</i>
+"Generalised Taft algebras and pairs in involution"</li>
+<li>08.07.2019 <i>Phillips–Universität Marburg</i>
+"Generalised Taft algebras and pairs in involution"</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org87ec73c" class="outline-3">
+<h3 id="org87ec73c"><span class="section-number-3">3.7.</span> 2018</h3>
+<div class="outline-text-3" id="text-3-7">
+<ul class="org-ul">
+<li>19.11.2018 <i>Institute of mathematics of the Polish academy of sciences</i>
+"Generalised Taft algebras and pairs in involution"</li>
+</ul>
 </div>
 </div>
 </div>
-
-<div id="outline-container-orge3eaec4" class="outline-2">
-<h2 id="orge3eaec4"><span class="section-number-2">4.</span> Teaching</h2>
+<div id="outline-container-org8612e6f" class="outline-2">
+<h2 id="org8612e6f"><span class="section-number-2">4.</span> Teaching</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-orgcd804a2" class="outline-3">
-<h3 id="orgcd804a2"><span class="section-number-3">4.1.</span> 2023</h3>
+<div id="outline-container-org9f0ffc7" class="outline-3">
+<h3 id="org9f0ffc7"><span class="section-number-3">4.1.</span> 2024</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+summer term: Representation theory of finite groups (lecturer)
+</p>
 </div>
-<div id="outline-container-org8bcfbb1" class="outline-3">
-<h3 id="org8bcfbb1"><span class="section-number-3">4.2.</span> 2022</h3>
+</div>
+<div id="outline-container-org0e54fea" class="outline-3">
+<h3 id="org0e54fea"><span class="section-number-3">4.2.</span> 2023</h3>
 <div class="outline-text-3" id="text-4-2">
+<p>
+winter term: Basic concepts of linear algebra (teaching assistant),
+             Algebra (teaching assitant)
+</p>
+
+<p>
+summer term: Representation theory of algebras (teaching assistant),
+             linear algebra II (teaching assistang)
+</p>
+</div>
+</div>
+<div id="outline-container-org54e9f42" class="outline-3">
+<h3 id="org54e9f42"><span class="section-number-3">4.3.</span> 2022</h3>
+<div class="outline-text-3" id="text-4-3">
 <p>
 winter term: linear algebra (teaching assisstant)
 </p>
@@ -186,9 +585,9 @@ summer term: geometry for civil engineers (tutor)
 </p>
 </div>
 </div>
-<div id="outline-container-orgbbbaac5" class="outline-3">
-<h3 id="orgbbbaac5"><span class="section-number-3">4.3.</span> 2021</h3>
-<div class="outline-text-3" id="text-4-3">
+<div id="outline-container-orgf1d4b9b" class="outline-3">
+<h3 id="orgf1d4b9b"><span class="section-number-3">4.4.</span> 2021</h3>
+<div class="outline-text-3" id="text-4-4">
 <p>
 winter term: mathematics for industrial engineers (teaching assistant)
 </p>
@@ -198,11 +597,11 @@ summer term: linear algebra for teachers (tutors)
 </p>
 </div>
 </div>
-<div id="outline-container-org9bb35a6" class="outline-3">
-<h3 id="org9bb35a6"><span class="section-number-3">4.4.</span> 2020</h3>
-<div class="outline-text-3" id="text-4-4">
+<div id="outline-container-org6186462" class="outline-3">
+<h3 id="org6186462"><span class="section-number-3">4.5.</span> 2020</h3>
+<div class="outline-text-3" id="text-4-5">
 <p>
-winter term: lineare Algebra (tutor)
+winter term: linear algebra (tutor)
 </p>
 
 <p>
@@ -210,9 +609,9 @@ summer term: Galois theory (teaching assistant)
 </p>
 </div>
 </div>
-<div id="outline-container-org086c814" class="outline-3">
-<h3 id="org086c814"><span class="section-number-3">4.5.</span> 2019</h3>
-<div class="outline-text-3" id="text-4-5">
+<div id="outline-container-orgd5f2d41" class="outline-3">
+<h3 id="orgd5f2d41"><span class="section-number-3">4.6.</span> 2019</h3>
+<div class="outline-text-3" id="text-4-6">
 <p>
 winter term: mathematics for industrial engineers (tutor)
 </p>
@@ -222,15 +621,20 @@ summer term: mathematics for engineers (tutor)
 </p>
 </div>
 </div>
-<div id="outline-container-org08ba67f" class="outline-3">
-<h3 id="org08ba67f"><span class="section-number-3">4.6.</span> 2018</h3>
-<div class="outline-text-3" id="text-4-6">
+<div id="outline-container-org89236ab" class="outline-3">
+<h3 id="org89236ab"><span class="section-number-3">4.7.</span> 2018</h3>
+<div class="outline-text-3" id="text-4-7">
 <p>
 winter term: mathematics for industrial engineers (tutor)
 </p>
 </div>
 </div>
 </div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Sebastian Halbig</p>
+<p class="date">Created: 2024-03-12 Tue 18:14</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>
