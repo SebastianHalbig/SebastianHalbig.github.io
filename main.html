@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-03-12 Tue 18:14 -->
+<!-- 2025-04-24 Thu 00:18 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Sebastian Halbig</title>
@@ -378,14 +378,108 @@ tbody {
     text-align: right;
 }
 
+.theorem {
+    font-weight: 350;
+    margin-left: 1em;
+    padding-left: 1em;
+    border-left: 3px solid #110d32; /*scotch-blue*/
+    font-style: italic;
+
+}
+.theorem:before {
+    content: "Theorem: ";
+    font-weight: 400;
+}
+
+.lemma {
+    font-weight: 350;
+    margin-left: 1em;
+    padding-left: 1em;
+    border-left: 3px solid #110d32; /*scotch-blue*/
+    font-style: italic;
+}
+.lemma:before {
+    content: "Lemma: ";
+    font-weight: 400;
+}
+
+.proof:before {
+    content: "Proof: ";
+    font-weight: 400;
+}
+
+.corollary {
+    font-weight: 350;
+    margin-left: 1em;
+    padding-left: 1em;
+    border-left: 3px solid #110d32; /*scotch-blue*/
+    font-style: italic;
+}
+
+.corollary:before {
+    content: "Corollary: ";
+    font-weight: 400;
+}
+
+.definition {
+    font-weight: 350;
+    margin-left: 1em;
+    padding-left: 1em;
+    border-left: 3px solid #110d32; /*scotch-blue*/
+}
+.definition:before {
+    content: "Definition: ";
+    font-weight: 400;
+}
+
+.example {
+    font-weight: 350;
+    margin-left: 1em;
+    padding-left: 1em;
+    border-left: 3px solid #110d32; /*scotch-blue*/
+}
+.example:before {
+    content: "Example: ";
+    font-weight: 400;
+}
+
+.remark {
+    font-weight: 350;
+    margin-left: 1em;
+    padding-left: 1em;
+    border-left: 3px solid #110d32; /*scotch-blue*/
+
+}
+.remark:before {
+    content: "Remark: ";
+    font-weight: 400;
+}
+
+
+.exercise {
+    font-weight: 350;
+    margin-left: 1em;
+    padding-left: 1em;
+    border-left: 3px solid #110d32; /*scotch-blue*/
+    font-style: italic;
+}
+.exercise:before {
+    content: "Exercise: ";
+    font-weight: 400;
+}
+
+.equation-container{
+    text-align: center;
+}
+
 /*]]>*/-->
 </style>
 </head>
 <body>
 <div id="content" class="content">
 <h1 class="title">Sebastian Halbig</h1>
-<div id="outline-container-orga75d0cc" class="outline-2">
-<h2 id="orga75d0cc"><span class="section-number-2">1.</span> About me</h2>
+<div id="outline-container-org769b51b" class="outline-2">
+<h2 id="org769b51b"><span class="section-number-2">1.</span> About me</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Currently, I am a research assistant in the team of <a href="https://www.uni-marburg.de/en/fb12/research-groups/algeblie">Istvan Heckenberger</a> at the Philipps-Universität Marburg. Prior to that, I was a PhD student of <a href="https://tu-dresden.de/mn/math/geometrie/kraehmer/startseite">Ulrich Krähmer</a> at the TU Dresden.
@@ -405,16 +499,16 @@ You can reach me via mail: <a href="mailto:Sebastian.Halbig@uni-marburg.de">Seba
 </p>
 </div>
 </div>
-<div id="outline-container-orgf6ac896" class="outline-2">
-<h2 id="orgf6ac896"><span class="section-number-2">2.</span> Publications</h2>
+<div id="outline-container-orgd4ad7e1" class="outline-2">
+<h2 id="orgd4ad7e1"><span class="section-number-2">2.</span> Publications</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Preprints of articles by my coauthors and me can be found on the <a href="https://arxiv.org/search/?query=Halbig%2C+Sebastian&amp;searchtype=author&amp;abstracts=show&amp;order=-announced_date_first&amp;size=50">arXiv</a>.
 Reviews and an overview of all published articles are on <a href="https://zbmath.org/authors/halbig.sebastian">zbMATH</a>.
 </p>
 </div>
-<div id="outline-container-org769ff22" class="outline-3">
-<h3 id="org769ff22"><span class="section-number-3">2.1.</span> Preprints</h3>
+<div id="outline-container-org8b32396" class="outline-3">
+<h3 id="org8b32396"><span class="section-number-3">2.1.</span> Preprints</h3>
 <div class="outline-text-3" id="text-2-1">
 <ol class="org-ol">
 <li>S. Halbig and T.Zorman. <span class="meek">Duality in Monoidal Categories</span>. (2024).</li>
@@ -423,8 +517,8 @@ Reviews and an overview of all published articles are on <a href="https://zbmath
 </ol>
 </div>
 </div>
-<div id="outline-container-org62ca7b0" class="outline-3">
-<h3 id="org62ca7b0"><span class="section-number-3">2.2.</span> Published articles</h3>
+<div id="outline-container-org28fdb22" class="outline-3">
+<h3 id="org28fdb22"><span class="section-number-3">2.2.</span> Published articles</h3>
 <div class="outline-text-3" id="text-2-2">
 <ol class="org-ol">
 <li>S. Halbig and T.Zorman. <span class="meek">Pivotality, twisted centres and the anti-double of a Hopf monad</span>. Theory Appl. Categ. (2024).</li>
@@ -433,8 +527,8 @@ Reviews and an overview of all published articles are on <a href="https://zbmath
 </ol>
 </div>
 </div>
-<div id="outline-container-orga3b587e" class="outline-3">
-<h3 id="orga3b587e"><span class="section-number-3">2.3.</span> Other publications</h3>
+<div id="outline-container-org2399902" class="outline-3">
+<h3 id="org2399902"><span class="section-number-3">2.3.</span> Other publications</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 A digital version of my PhD thesis can be found <a href="https://tud.qucosa.de/api/qucosa%3A80342/attachment/ATT-0/">here</a>.
@@ -442,13 +536,21 @@ A digital version of my PhD thesis can be found <a href="https://tud.qucosa.de/a
 </div>
 </div>
 </div>
-<div id="outline-container-org5200e9e" class="outline-2">
-<h2 id="org5200e9e"><span class="section-number-2">3.</span> Conferences, talks and research visits</h2>
+<div id="outline-container-org780df2b" class="outline-2">
+<h2 id="org780df2b"><span class="section-number-2">3.</span> Conferences, talks and research visits</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org41fd7c1" class="outline-3">
-<h3 id="org41fd7c1"><span class="section-number-3">3.1.</span> 2024</h3>
+<div id="outline-container-org41a3d6d" class="outline-3">
+<h3 id="org41a3d6d"><span class="section-number-3">3.1.</span> 2025</h3>
 <div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>22.04. - 26.04.2025 <i>Hopf 25</i> in Brussels: <a href="slides.pdf">My slides.</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgce8715d" class="outline-3">
+<h3 id="orgce8715d"><span class="section-number-3">3.2.</span> 2024</h3>
+<div class="outline-text-3" id="text-3-2">
 <ul class="org-ul">
 <li>29.04. - 03.05.2024 Research visit in <i>Bonn</i></li>
 <li>26.02. - 27.02.2024 Research visit in <i>Dresden</i></li>
@@ -463,9 +565,9 @@ A digital version of my PhD thesis can be found <a href="https://tud.qucosa.de/a
 </ul>
 </div>
 </div>
-<div id="outline-container-org0c3ac57" class="outline-3">
-<h3 id="org0c3ac57"><span class="section-number-3">3.2.</span> 2023</h3>
-<div class="outline-text-3" id="text-3-2">
+<div id="outline-container-orga8a8fb9" class="outline-3">
+<h3 id="orga8a8fb9"><span class="section-number-3">3.3.</span> 2023</h3>
+<div class="outline-text-3" id="text-3-3">
 <ul class="org-ul">
 <li>23.11. - 26.11.2023 <i>Factorisation homology seminar</i> in Dresden
 <ul class="org-ul">
@@ -485,9 +587,9 @@ A digital version of my PhD thesis can be found <a href="https://tud.qucosa.de/a
 </ul>
 </div>
 </div>
-<div id="outline-container-orgac59503" class="outline-3">
-<h3 id="orgac59503"><span class="section-number-3">3.3.</span> 2022</h3>
-<div class="outline-text-3" id="text-3-3">
+<div id="outline-container-org9287fa3" class="outline-3">
+<h3 id="org9287fa3"><span class="section-number-3">3.4.</span> 2022</h3>
+<div class="outline-text-3" id="text-3-4">
 <ul class="org-ul">
 <li>08.12. - 11.12.2022 Seminar on <i>Operads</i> in Bonn</li>
 <li>05.12. - 08.12.2022 Research visit in <i>Erlangen</i></li>
@@ -502,9 +604,9 @@ A digital version of my PhD thesis can be found <a href="https://tud.qucosa.de/a
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf04d527" class="outline-3">
-<h3 id="orgf04d527"><span class="section-number-3">3.4.</span> 2021</h3>
-<div class="outline-text-3" id="text-3-4">
+<div id="outline-container-orgbd8a9c6" class="outline-3">
+<h3 id="orgbd8a9c6"><span class="section-number-3">3.5.</span> 2021</h3>
+<div class="outline-text-3" id="text-3-5">
 <ul class="org-ul">
 <li>09.12.2021 <i>Czech academy of sciences in Prague</i>
 "Exploring the Kitaev lattice model"</li>
@@ -513,9 +615,9 @@ A digital version of my PhD thesis can be found <a href="https://tud.qucosa.de/a
 </ul>
 </div>
 </div>
-<div id="outline-container-org2ff7adc" class="outline-3">
-<h3 id="org2ff7adc"><span class="section-number-3">3.5.</span> 2020</h3>
-<div class="outline-text-3" id="text-3-5">
+<div id="outline-container-orgf56dc21" class="outline-3">
+<h3 id="orgf56dc21"><span class="section-number-3">3.6.</span> 2020</h3>
+<div class="outline-text-3" id="text-3-6">
 <ul class="org-ul">
 <li>09.11.2020 <i>Geometric methods seminar Dresden</i>
 "Reconstruction of fusion categories"</li>
@@ -524,9 +626,9 @@ A digital version of my PhD thesis can be found <a href="https://tud.qucosa.de/a
 </ul>
 </div>
 </div>
-<div id="outline-container-org171b450" class="outline-3">
-<h3 id="org171b450"><span class="section-number-3">3.6.</span> 2019</h3>
-<div class="outline-text-3" id="text-3-6">
+<div id="outline-container-org933e8a4" class="outline-3">
+<h3 id="org933e8a4"><span class="section-number-3">3.7.</span> 2019</h3>
+<div class="outline-text-3" id="text-3-7">
 <ul class="org-ul">
 <li>16.12.2019 <i>Friedrich–Alexander University Erlangen</i>
 "Generalised Taft algebras and pairs in involution"</li>
@@ -537,9 +639,9 @@ A digital version of my PhD thesis can be found <a href="https://tud.qucosa.de/a
 </ul>
 </div>
 </div>
-<div id="outline-container-org87ec73c" class="outline-3">
-<h3 id="org87ec73c"><span class="section-number-3">3.7.</span> 2018</h3>
-<div class="outline-text-3" id="text-3-7">
+<div id="outline-container-org0984407" class="outline-3">
+<h3 id="org0984407"><span class="section-number-3">3.8.</span> 2018</h3>
+<div class="outline-text-3" id="text-3-8">
 <ul class="org-ul">
 <li>19.11.2018 <i>Institute of mathematics of the Polish academy of sciences</i>
 "Generalised Taft algebras and pairs in involution"</li>
@@ -547,20 +649,20 @@ A digital version of my PhD thesis can be found <a href="https://tud.qucosa.de/a
 </div>
 </div>
 </div>
-<div id="outline-container-org8612e6f" class="outline-2">
-<h2 id="org8612e6f"><span class="section-number-2">4.</span> Teaching</h2>
+<div id="outline-container-org5aeacda" class="outline-2">
+<h2 id="org5aeacda"><span class="section-number-2">4.</span> Teaching</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-org9f0ffc7" class="outline-3">
-<h3 id="org9f0ffc7"><span class="section-number-3">4.1.</span> 2024</h3>
+<div id="outline-container-orgc4fd56f" class="outline-3">
+<h3 id="orgc4fd56f"><span class="section-number-3">4.1.</span> 2024</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 summer term: Representation theory of finite groups (lecturer)
 </p>
 </div>
 </div>
-<div id="outline-container-org0e54fea" class="outline-3">
-<h3 id="org0e54fea"><span class="section-number-3">4.2.</span> 2023</h3>
+<div id="outline-container-orgec924f4" class="outline-3">
+<h3 id="orgec924f4"><span class="section-number-3">4.2.</span> 2023</h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
 winter term: Basic concepts of linear algebra (teaching assistant),
@@ -573,8 +675,8 @@ summer term: Representation theory of algebras (teaching assistant),
 </p>
 </div>
 </div>
-<div id="outline-container-org54e9f42" class="outline-3">
-<h3 id="org54e9f42"><span class="section-number-3">4.3.</span> 2022</h3>
+<div id="outline-container-orgb8679cd" class="outline-3">
+<h3 id="orgb8679cd"><span class="section-number-3">4.3.</span> 2022</h3>
 <div class="outline-text-3" id="text-4-3">
 <p>
 winter term: linear algebra (teaching assisstant)
@@ -585,8 +687,8 @@ summer term: geometry for civil engineers (tutor)
 </p>
 </div>
 </div>
-<div id="outline-container-orgf1d4b9b" class="outline-3">
-<h3 id="orgf1d4b9b"><span class="section-number-3">4.4.</span> 2021</h3>
+<div id="outline-container-org63cf10d" class="outline-3">
+<h3 id="org63cf10d"><span class="section-number-3">4.4.</span> 2021</h3>
 <div class="outline-text-3" id="text-4-4">
 <p>
 winter term: mathematics for industrial engineers (teaching assistant)
@@ -597,8 +699,8 @@ summer term: linear algebra for teachers (tutors)
 </p>
 </div>
 </div>
-<div id="outline-container-org6186462" class="outline-3">
-<h3 id="org6186462"><span class="section-number-3">4.5.</span> 2020</h3>
+<div id="outline-container-org6ce430c" class="outline-3">
+<h3 id="org6ce430c"><span class="section-number-3">4.5.</span> 2020</h3>
 <div class="outline-text-3" id="text-4-5">
 <p>
 winter term: linear algebra (tutor)
@@ -609,8 +711,8 @@ summer term: Galois theory (teaching assistant)
 </p>
 </div>
 </div>
-<div id="outline-container-orgd5f2d41" class="outline-3">
-<h3 id="orgd5f2d41"><span class="section-number-3">4.6.</span> 2019</h3>
+<div id="outline-container-org39163be" class="outline-3">
+<h3 id="org39163be"><span class="section-number-3">4.6.</span> 2019</h3>
 <div class="outline-text-3" id="text-4-6">
 <p>
 winter term: mathematics for industrial engineers (tutor)
@@ -621,8 +723,8 @@ summer term: mathematics for engineers (tutor)
 </p>
 </div>
 </div>
-<div id="outline-container-org89236ab" class="outline-3">
-<h3 id="org89236ab"><span class="section-number-3">4.7.</span> 2018</h3>
+<div id="outline-container-orgba20f5c" class="outline-3">
+<h3 id="orgba20f5c"><span class="section-number-3">4.7.</span> 2018</h3>
 <div class="outline-text-3" id="text-4-7">
 <p>
 winter term: mathematics for industrial engineers (tutor)
@@ -633,7 +735,7 @@ winter term: mathematics for industrial engineers (tutor)
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Sebastian Halbig</p>
-<p class="date">Created: 2024-03-12 Tue 18:14</p>
+<p class="date">Created: 2025-04-24 Thu 00:18</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

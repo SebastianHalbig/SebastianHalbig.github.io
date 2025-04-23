@@ -25,6 +25,8 @@ Reviews and an overview of all published articles are on [[https://zbmath.org/au
 A digital version of my PhD thesis can be found [[https://tud.qucosa.de/api/qucosa%3A80342/attachment/ATT-0/][here]].
 
 * Conferences, talks and research visits
+** 2025
++ 22.04. - 26.04.2025 /Hopf 25/ in Brussels: [[file:slides.pdf][My slides.]]
 ** 2024
 + 29.04. - 03.05.2024 Research visit in /Bonn/
 + 26.02. - 27.02.2024 Research visit in /Dresden/
