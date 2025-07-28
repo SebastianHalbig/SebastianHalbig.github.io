@@ -53,7 +53,7 @@ A digital version of my PhD thesis can be found [[https://tud.qucosa.de/api/quco
 ** 2021
 + 06.12 - 10.12.2021 visiting /Martin Markl/ in Prague, Czech Republic
 ** 2019
-+ 34.09 - 02.10.2019 visiting /Robert Yuncken/ in Clermont-Ferrand, France
++ 24.09 - 02.10.2019 visiting /Robert Yuncken/ in Clermont-Ferrand, France
 
 * Talks
 ** 2025
