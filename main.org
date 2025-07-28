@@ -91,14 +91,14 @@ A digital version of my PhD thesis can be found [[https://tud.qucosa.de/api/quco
   "Pivotality, twisted centres and the anti-double of a Hopf monad"
 + 14.05-15.05.2022 /PSSL Brno/ in Brno, Czech Republic
   + 15.05 Talk "Pivotality, twisted centres and the anti-double of a Hopf monad"
-+ 12.05.2022 /Czech academy of sciences in Prague/, in Prague, Czech Republic
++ 12.05.2022 /Czech academy of sciences/, in Prague, Czech Republic
   "Pivotality, twisted centres and the anti-double of a Hopf monad"
 + 12.04.2022 /Universität Hamburg/ in Hamburg, Germany
   "Pivotality, twisted centres and the anti-double of a Hopf monad"
 + 18.01.2022 /AIMS Ghana/, in Accra, Ghana
   "Coxeter groups and beyond"
 ** 2021
-+ 09.12.2021 /Czech academy of sciences in Prague/ in Prague, Czech Republic
++ 09.12.2021 /Czech academy of sciences/ in Prague, Czech Republic
   "Exploring the Kitaev lattice model"
 + 18.10.2021 /Geometric methods seminar Dresden/ in Dresden, Germany
   "Higher-dimensional Algebra and Topological Quantum Field Theory"
