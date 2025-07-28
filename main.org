@@ -1,6 +1,10 @@
 #+title: Sebastian Halbig
 
 * About me
+#+ATTR_HTML: :alt Zoomed image.
+#+ATTR_HTML: :width 200 :style border:2px solid black; float: right;
+[[./IMG_20250321_173154.jpg]]
+
 Currently, I am a research assistant in the team of [[https://www.uni-marburg.de/en/fb12/research-groups/algeblie][Istvan Heckenberger]] at the Philipps-Universität Marburg. Prior to that, I was a PhD student of [[https://tu-dresden.de/mn/math/geometrie/kraehmer/startseite][Ulrich Krähmer]] at the TU Dresden.
 
 My research lives at the intersection of three areas:
@@ -14,95 +18,176 @@ Preprints of articles by my coauthors and me can be found on the [[https://arxiv
 Reviews and an overview of all published articles are on [[https://zbmath.org/authors/halbig.sebastian][zbMATH]].
 
 ** Preprints
-1. U. Krähmer and S. Halbig. ~[[https://arxiv.org/abs/2506.09249][A non-semisimple Kitaev lattice model]]~. (2025)
-2. S. Halbig and T.Zorman. ~Duality in Monoidal Categories~. (2024).
-3. S. Halbig and T.Zorman. ~Diagrammatics for Comodule Monads~. (2023).
+1. U. Krähmer and S. Halbig. [[https://arxiv.org/abs/2506.09249][A non-semisimple Kitaev lattice model]]. (2025).
+2. S. Halbig and T.Zorman. [[https://arxiv.org/abs/2301.03545][Duality in Monoidal Categories]]. (2024).
 ** Published articles
-1. B. Femić and S. Halbig. ~Categorical centers and Yetter–Drinfel`d-modules as 2-categorical (bi)lax structures~. Publ. Inst. Math., Nouv. Sér. (2025).
-2. S. Halbig and T.Zorman. ~Pivotality, twisted centres and the anti-double of a Hopf monad~. Theory Appl. Categ. (2024).
-3. S. Halbig. ~Generalised Taft algebras and pairs in involution~. Commun. Algebra. (2021).
-4. S. Halbig and U. Krähmer ~A Hopf algebra without a modular pair in involution~. Geom. Methods in Physics XXXVII. (2019).
+1. B. Femić and S. Halbig. [[https://doiserbia.nb.rs/Article.aspx?ID=0350-13022531001F][Categorical centers and Yetter–Drinfel`d-modules as 2-categorical (bi)lax structures]]. Publ. Inst. Math., Nouv. Sér. (2025).
+2. S. Halbig and T.Zorman. [[https://link.springer.com/article/10.1007/s10485-024-09778-9][Diagrammatics for Comodule Monads]]. Appl. Categ. Struct. (2023).
+3. S. Halbig and T.Zorman. [[http://www.tac.mta.ca/tac/volumes/41/4/41-04abs.html][Pivotality, twisted centres and the anti-double of a Hopf monad]]. Theory Appl. Categ. (2024).
+4. S. Halbig. [[https://www.tandfonline.com/doi/full/10.1080/00927872.2021.1939043][Generalized Taft algebras and pairs in involution]]. Commun. Algebra. (2021).
+5. S. Halbig and U. Krähmer [[https://link.springer.com/chapter/10.1007/978-3-030-34072-8_14][A Hopf algebra without a modular pair in involution]]. Geom. Methods in Physics XXXVII. (2019).
 ** Other publications
 A digital version of my PhD thesis can be found [[https://tud.qucosa.de/api/qucosa%3A80342/attachment/ATT-0/][here]].
 
-* Conferences, talks and research visits
+* (Co-)organised workshops
++ Workshop on "Factorisation homology" in Kleinwalsertal, Austria (30.10–03.11.2024)
++ Workshop on "Mackey functors" in Dresden, Germany (14.07–17.07.2023)
++ Workshop "Hopf Algebras and Tensor Categories" in Marburg, Germany (22.05.–26.05.2023)
++ Seminar "Geometric methods in mathematics" in Dresden, Germany (2020-2022)
++ Seminar "Algebra–Geometrie–Kombinatorik" in Dresden, Germany (summer term 2022)
+
+* Research visits
 ** 2025
-+ 22.04. - 26.04.2025 /Hopf 25/ in Brussels: [[file:slides.pdf][My slides.]]
++ 27.02 - 13.03.2025 visiting /Ivan Angiono/ in Cordoba, Argentina
+  as part of the DFG-project "Lie-Theorie in Geometrie, Algebra und Analysis" (541920696)
 ** 2024
-+ 29.04. - 03.05.2024 Research visit in /Bonn/
-+ 26.02. - 27.02.2024 Research visit in /Dresden/
-+ 19.02.2024 - 23.05.2024 Research visit in /Brno/
-  + 21.02.2024 Talk in the /Brno Algebra seminar:/  "Dualities in monoidal functor categories"
-+ 28.01. - 02.02.2024 /Oberwolfach Mini-workshop:/ "Bridging Number Theory and Nichols Algebras via Deformations"
++ 30.09 - 02.10.2024 visiting /Jennifer Brown/ in Edinburgh, Scotland
++ 29.04 - 03.05.2024 visiting /Catharina Stroppel/ in Bonn, Germany
++ 26.02 - 27.02.2024 visiting /Ulrich Krähmer/ in Dresden, Germany
++ 19.02 - 23.02.2024 visiting /John Bourke/ in Brno, Czech Republic
+** 2023
++ 27.11- 01.12.2023 visiting /Ulrich Krähmer/ in Dresden, Germany
+** 2022
++ 05.12 - 08.12.2022 visiting /Catherine Meusburger/ in Erlangen, Germany
++ 03.01 - 24.01.2022 as teaching assistant of Ulrich Krähmer visiting AIMS Ghana in Accra, Ghana
+** 2021
++ 06.12 - 10.12.2021 visiting /Martin Markl/ in Prague, Czech Republic
+** 2019
++ 34.09 - 02.10.2019 visiting /Robert Yuncken/ in Clermont-Ferrand, France
+
+* Talks
+** 2025
++ 03.06.2025 /Noncommutative geometry and topology seminar/ in Prague, Czech Republic
+  “A non-semisimple version of the Kitaev lattice model”
++ 19.05 - 20.05.2025 /Higher structures for Hopf algebras/ in Dresden, Germany
+  + 20.05 Talk “A non-semisimple version of the Kitaev lattice model”
++ 22.04. - 26.04.2025 /Hopf25/ in Brussels, Belgium
+  + 24.04 Talk "A non-semisimple version of the Kitaev model" (Plenary speaker)
++ 11.03.2025 /Seminario del Grupo de Lie/ in Córdoba, Argentina
+  "A non-semisimple Kitaev lattice model"
++ 05.03. - 11.03.2025 /Lie Theory in Geometry, Algebra and Analysis/ in Córdoba, Argentina
+  + 10.03 Talk "Topological aspects of representation theory"
+** 2024
++ 02.10.2024 /Algebra Seminar/ in Edinburgh, Scotland,
+  "A non-semisimple variant of the Kitaev lattice model"
++ 03.05.2024 /Oberseminar Darstellungstheorie/ in Bonn, Germany
+  "Pivotality and twisted centres"
++ 21.02.2024 /Brno Algebra seminar:/ in Brno, Czech Republic,
+  "Dualities in monoidal functor categories"
++ 28.01. - 02.02.2024 /Oberwolfach Mini-workshop:/ "Bridging Number Theory and Nichols Algebras via Deformations" in Oberwolfach, Germany
   + 02.02.2024 Talk: "Dualities in abelian monoidal functor categories"
 ** 2023
-+ 23.11. - 26.11.2023 /Factorisation homology seminar/ in Dresden
-  + Talks on the 24.11 and the 25.11
-+ 20.10. - 22.10.2023 /Factorisation homology seminar/ in Bonn
-+ 04.09. - 06.09.2023 /Hopf days/ in Brussels
++ 23.11. - 26.11.2023 /Factorisation homology seminar/ in Dresden, Germany
+  + 24.11 Talk "The Goldman bracket via ribbon graphs (Part I)"
+  + 25.11 Talk "The Goldman bracket via ribbon graphs (Part II)"
++ 04.09. - 06.09.2023 /Hopf days/ in Brussels, Belgium
   + 04.09 Talk "Duality in monoidal categories"
-+ 14.07. - 15.07.2023 Seminar on /Mackey functors/ co-organised with T. Zorman
-+ 02.07. - 08.07.2023 /Category Theory 2023/ in Louvain-la-Neuve
-+ 22.05. - 26.05.2023 Workshop /Hopf Algebras and Tensor Categories/ in Marburg
-  + 23.05 Talk " Pairs in involution – From Hopf algebras to monoidal categories and back"
++ 22.05. - 26.05.2023 Workshop /Hopf Algebras and Tensor Categories/ in Marburg, Germany
+  + 23.05 Talk "Pairs in involution – From Hopf algebras to monoidal categories and back"
 ** 2022
-+ 08.12. - 11.12.2022 Seminar on /Operads/ in Bonn
-+ 05.12. - 08.12.2022 Research visit in /Erlangen/
-+ 30.05.2022 /Quantum groups seminar/
++ 08.12. - 11.12.2022 Seminar on /Operads/ in Bonn, Germany
+  + 08.12 Talk "A-infinity algebras"
++ 30.05.2022 /Quantum groups seminar/ (online)
   "Pivotality, twisted centres and the anti-double of a Hopf monad"
-+ 15.05.2022 /PSSL Brno/
++ 14.05-15.05.2022 /PSSL Brno/ in Brno, Czech Republic
+  + 15.05 Talk "Pivotality, twisted centres and the anti-double of a Hopf monad"
++ 12.05.2022 /Czech academy of sciences in Prague/, in Prague, Czech Republic
   "Pivotality, twisted centres and the anti-double of a Hopf monad"
-+ 12.05.2022 /Czech academy of sciences in Prague/
++ 12.04.2022 /Universität Hamburg/ in Hamburg, Germany
   "Pivotality, twisted centres and the anti-double of a Hopf monad"
-+ 12.04.2022 /Universität Hamburg/
-  "Pivotality, twisted centres and the anti-double of a Hopf monad"
++ 18.01.2022 /AIMS Ghana/, in Accra, Ghana
+  "Coxeter groups and beyond"
 ** 2021
-+ 09.12.2021 /Czech academy of sciences in Prague/
++ 09.12.2021 /Czech academy of sciences in Prague/ in Prague, Czech Republic
   "Exploring the Kitaev lattice model"
-+ 28.01.2021 /Promotionen und Postdocs in Darstellungstheorie (online)/
++ 18.10.2021 /Geometric methods seminar Dresden/ in Dresden, Germany
+  "Higher-dimensional Algebra and Topological Quantum Field Theory"
++ 28.01.2021 /Promotionen und Postdocs in Darstellungstheorie/ (online)
   "Generalised Taft algebras and pairs in involution"
 ** 2020
-+ 09.11.2020 /Geometric methods seminar Dresden/
++ 09.11.2020 /Geometric methods seminar Dresden/ in Dresden, Germany
   "Reconstruction of fusion categories"
-+ 20.01.2020 /RWTH Aachen/
++ 20.01.2020 /RWTH Aachen/ in Aachen, Germany
   "Generalised Taft algebras and pairs in involution"
 ** 2019
-+ 16.12.2019 /Friedrich–Alexander University Erlangen/
++ 16.12.2019 /Friedrich–Alexander University Erlangen/ in Erlangen, Germany
   "Generalised Taft algebras and pairs in involution"
-+ 30.09.2019 /Univerité Blaise–Pascal Clermont–Ferrand/
++ 30.09.2019 /Univerité Blaise–Pascal Clermont–Ferrand/ in Clermont-Ferrand, France
   "Generalised Taft algebras and pairs in involution"
-+ 08.07.2019 /Phillips–Universität Marburg/
++ 08.07.2019 /Phillips–Universität Marburg/ in Marburg, Germany
   "Generalised Taft algebras and pairs in involution"
 ** 2018
-+ 19.11.2018 /Institute of mathematics of the Polish academy of sciences/
++ 19.11.2018 /Institute of mathematics of the Polish academy of sciences/ in Warsaw, Poland
   "Generalised Taft algebras and pairs in involution"
-* Teaching
+
+* Attended conferences without own talk
+** 2025
++ 08.09 - 12.09.2025 /Workshop on higher structures: recent developments and applications/ Hamburg, Germany
++ 30.06 - 11.07.2025 /Quantum Field Theory and Topological Phases via Homotopy Theory and Operator Algebras/ in Bonn, Germany
++ 23.06 - 26.06.2025 /Factorisation homology seminar/ in Bonn, Germany
++ 14.02 - 15.02.2025 /Algebra and Representation Theory in Germany/ in Bonn, Germany
 ** 2024
-summer term: Representation theory of finite groups (lecturer)
++ 08.10 - 11.10.2024 /Higher Structures in Noncommutative Geometry and Quantum Algebra/ in Lille, France
++ 23.09 - 27.09.2024 /Scottish Talbot on Algebra and Topology: Higher tensor categories and their extensions/ in Glenmore, Scotland
++ 03.09 - 06.09.2024 /Hopf Algebras and Monoidal Categories/ in Ferrara, Germany
++ 14.06 - 15.06.2024 /Algebra and Representation Theory in Germany/ in Aachen, Germany
++ 11.06 - 14.06.2024 /Factorisation homology seminar/ in Bonn, Germany
 ** 2023
-winter term: Basic concepts of linear algebra (teaching assistant),
-             Algebra (teaching assitant)
-
-summer term: Representation theory of algebras (teaching assistant),
-             linear algebra II (teaching assistang)
++ 20.10. - 22.10.2023 /Factorisation homology seminar/ in Bonn, Germany
++ 02.07 - 08.07.2023 /Category Theory 2023/ in Louvain-la-Neuve, Belgium
 ** 2022
-winter term: linear algebra (teaching assisstant)
-
-summer term: geometry for civil engineers (tutor)
-** 2021
-winter term: mathematics for industrial engineers (teaching assistant)
-
-summer term: linear algebra for teachers (tutors)
++ 13.06 - 17.06.2022 /Summer school and workshop: Representation theory and flag or quiver varieties/ in Paris, Germany
 ** 2020
-winter term: linear algebra (tutor)
-
-summer term: Galois theory (teaching assistant)
++ 16.03 - 20.03.2020 /Tensor categories and topological quantum field theories/ in SLMath, Berkley, USA (moved online due to Covid-19)
 ** 2019
-winter term: mathematics for industrial engineers (tutor)
-
-summer term: mathematics for engineers (tutor)
++ 26.08 - 30.08.2019 /Algebraic structures in quantum field theory/ in Hamburg, Germany
 ** 2018
-winter term: mathematics for industrial engineers (tutor)
++ 22.01 - 26.01.2018 /Tensor categories, Hopf algebras and quantum groups/ in Marburg, Germany
+* Teaching
+** 2025
++ winter term:
+  + Abstract algebra (teaching assistant)
++ summer term:
+  + Linear algebra II (teaching assistant)
+  + Matrix methods in data analysis (teaching assistant)
+  + Hopf algebras (tutor)
+
+** 2024
++ winter term:
+  + Linear algebra I (teaching assistant)
+  + Lie groups and lie algebras (tutor)
++ summer term:
+  + Representation theory of finite groups (lecturer)
+** 2023
++ winter term:
+  + Basic concepts of linear algebra (teaching assistant),
+  + Algebra (teaching assistant)
++ summer term:
+  + Representation theory of algebras (teaching assistant),
+  + Linear algebra II (teaching assistant)
+** 2022
++ winter term:
+  + linear algebra I (teaching assistant)
++ summer term:
+  + geometry for civil engineers (tutor)
+** 2021
++ winter term:
+  + mathematics for industrial engineers (teaching assistant)
++ summer term:
+  + linear algebra for teachers (tutors)
+** 2020
++ winter term:
+  + linear algebra (tutor)
++ summer term:
+  + Galois theory (teaching assistant)
+** 2019
++ winter term:
+  + mathematics for industrial engineers (tutor)
++ summer term:
+  + mathematics for engineers (tutor)
+** 2018
++ winter term:
+  + mathematics for industrial engineers (tutor)
 
 
 #+OPTIONS: toc:nil
