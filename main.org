@@ -14,13 +14,14 @@ Preprints of articles by my coauthors and me can be found on the [[https://arxiv
 Reviews and an overview of all published articles are on [[https://zbmath.org/authors/halbig.sebastian][zbMATH]].
 
 ** Preprints
-1. S. Halbig and T.Zorman. ~Duality in Monoidal Categories~. (2024).
-2. S. Halbig and T.Zorman. ~Diagrammatics for Comodule Monads~. (2023).
-3. B. Femić and S. Halbig. ~Categorical centers and Yetter–Drinfel`d-modules as 2-categorical (bi)lax structures~. (2023).
+1. U. Krähmer and S. Halbig. ~[[https://arxiv.org/abs/2506.09249][A non-semisimple Kitaev lattice model]]~. (2025)
+2. S. Halbig and T.Zorman. ~Duality in Monoidal Categories~. (2024).
+3. S. Halbig and T.Zorman. ~Diagrammatics for Comodule Monads~. (2023).
 ** Published articles
-1. S. Halbig and T.Zorman. ~Pivotality, twisted centres and the anti-double of a Hopf monad~. Theory Appl. Categ. (2024).
-2. S. Halbig. ~Generalised Taft algebras and pairs in involution~. Commun. Algebra. (2021).
-3. S. Halbig and U. Krähmer ~A Hopf algebra without a modular pair in involution~. Geom. Methods in Physics XXXVII. (2019).
+1. B. Femić and S. Halbig. ~Categorical centers and Yetter–Drinfel`d-modules as 2-categorical (bi)lax structures~. Publ. Inst. Math., Nouv. Sér. (2025).
+2. S. Halbig and T.Zorman. ~Pivotality, twisted centres and the anti-double of a Hopf monad~. Theory Appl. Categ. (2024).
+3. S. Halbig. ~Generalised Taft algebras and pairs in involution~. Commun. Algebra. (2021).
+4. S. Halbig and U. Krähmer ~A Hopf algebra without a modular pair in involution~. Geom. Methods in Physics XXXVII. (2019).
 ** Other publications
 A digital version of my PhD thesis can be found [[https://tud.qucosa.de/api/qucosa%3A80342/attachment/ATT-0/][here]].
 
