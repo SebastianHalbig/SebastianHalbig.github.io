@@ -38,6 +38,7 @@ A digital version of my PhD thesis can be found [[https://tud.qucosa.de/api/quco
 
 * Research visits
 ** 2025
++ 12.10 - 18.10.2025 visting /Christian Lomp/ in Porto, Portugal
 + 27.02 - 13.03.2025 visiting /Ivan Angiono/ in Cordoba, Argentina
   as part of the DFG-project "Lie-Theorie in Geometrie, Algebra und Analysis" (541920696)
 ** 2024
