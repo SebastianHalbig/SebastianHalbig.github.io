@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2025-12-05 Fri 17:55 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="author" content="Sebastian Halbig" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  pre.src-C\+\+:before { content: 'C++'; }
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'JavaScript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" href="./tufte.css" type="text/css" />
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<article id="content" class="content">
+<p>
+
+<div class="header">
+  <span class="title" id="title-left"><a href="index.html">Sebastian Halbig</a></span>
+  <span class="nav-links" id="title-right">
+    <a href="publications.html">Publications</a>
+    <a href="teaching.html">Teaching</a>
+    <a href="games/braid-trivialiser.html">Math games</a>
+    <a href="cv.html">CV</a>
+  </span>
+</div>
+
+</p>
+
+<p>
+Preprints of articles by my coauthors and me can be found on the <a href="https://arxiv.org/search/?query=Halbig%2C+Sebastian&amp;searchtype=author&amp;abstracts=show&amp;order=-announced_date_first&amp;size=50">arXiv</a>.
+Reviews and an overview of all published articles are on <a href="https://zbmath.org/authors/halbig.sebastian">zbMATH</a>.
+</p>
+<section id="outline-container-org7925b9e" class="outline-2">
+<h2 id="org7925b9e"><span class="section-number-2">1.</span> Preprints</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org7f16d57" class="outline-4">
+<h4 id="org7f16d57"><span class="section-number-4">1.0.1.</span> C. Lomp and S. Halbig. <a href="https://arxiv.org/abs/2511.11047">Irreducible representations of generalised Kac–Paljutkin Hopf algebras.</a> (2025).</h4>
+<div class="outline-text-4" id="text-1-0-1">
+<p>
+Generalised Kac–Paljutkin algebras were introduced by Christian Lomp as crossed products of two group algebras. These are  semisimple, non-commutative, non-cocommutative finite-dimensional Hopf algebras.
+In this note, we show that generalised Kac–Paljutkin algebras are isomorphic as algebras (but not as Hopf algebras) to group algebras.
+This we use to classify their simple representations in terms of tuples of Young tableaux.
+</p>
+</div>
+</div>
+<div id="outline-container-org99c01cb" class="outline-4">
+<h4 id="org99c01cb"><span class="section-number-4">1.0.2.</span> U. Krähmer and S. Halbig. <a href="https://arxiv.org/abs/2506.09249">A non-semisimple Kitaev lattice model</a>. (2025).</h4>
+<div class="outline-text-4" id="text-1-0-2">
+<p>
+A major problem in quantum computing is that quantum states cannot be copied, which implies that classical error-correction strategies cannot be applied.
+An ingenious solution to this issue was proposed by A. Kitaev by combining topological properties of surfaces with the representation theory of Drinfeld doubles of group algebras. This model, now known as the Kitaev (quantum double) model, is one of the most-studied proposals for topological quantum computing and has seen various generalisations.
+Despite its extensive investigation however, the algebraic side of the model was so far always assumed to be semisimple.
+</p>
+
+<p>
+In our joint work, we develop a non-semisimple analogue for the Kitaev model. This comes with some notable changes compared to the classical approach:
+</p>
+<ul class="org-ul">
+<li>We introduce coefficients (involutive Hopf bimodules) to the model.
+These are closely related to structures arising in Hopf-cyclic homology.
+These can be chosen to be trivial if and only if the antipode of the Hopf algebra squares to the identity and in this case one recovers the classical (semisimple) Kitaev model.</li>
+<li>The projectors onto invariant subspaces are replaced by bitensor products.
+These measure the difference between the coinvariant subspace (with respect to the coaction) and invariant subspace (with respect to the action) of a Yetter–Drinfeld module.</li>
+<li>Topological invariance is established via a Mayer–Vietoris-type sequence which tracks how gluing surfaces togther affects the algebraic side of the model.</li>
+</ul>
+
+<p>
+A particularly interesting choice for the algebraic input datum of the theory are small quantum groups and, more generally, bosonisations of Nichols algebras. In this setting, we develop a reduction formalism, allowing to compute the topologically protected spaces of the models in terms of the representations of the Cartan part.
+</p>
+</div>
+</div>
+<div id="outline-container-orgd98eb26" class="outline-4">
+<h4 id="orgd98eb26"><span class="section-number-4">1.0.3.</span> S. Halbig and T. Zorman. <a href="https://arxiv.org/abs/2301.03545">Duality in Monoidal Categories</a>. (2023).</h4>
+<div class="outline-text-4" id="text-1-0-3">
+<p>
+A module over a commutative ring is finitely-generated projective  if and only if tensoring with this module is left adjoint to tensoring with its dual.
+Finitely-generated modules have many favourable properties; for example, they admit dual bases, which can be used to take traces of endomorphism.
+In categorical terms, finitely-generated modules are the rigidly dualisable objects of the representation category of a commutative ring.
+C. Heunen raised the question whether the rigidly dualisable objects of a monoidal category coincide with the "tensor-representable" objects; objects such that tensoring with them is left adjoint to tensoring with a "dual" object.
+We answer his question in the negative and show that for \(\mathfrak{sl}_{2}\)-crystals all objects are tensor-representable but only direct sums of the monoidal unit are rigidly dualisable.
+</p>
+</div>
+</div>
+</section>
+<section id="outline-container-org9beed48" class="outline-2">
+<h2 id="org9beed48"><span class="section-number-2">2.</span> Published articles</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orgee35afe" class="outline-4">
+<h4 id="orgee35afe"><span class="section-number-4">2.0.1.</span> B. Femić and S. Halbig. <a href="https://doiserbia.nb.rs/Article.aspx?ID=0350-13022531001F">Categorical centers and Yetter–Drinfel`d-modules as 2-categorical (bi)lax structures</a>. Publ. Inst. Math., Nouv. Sér. (2025).</h4>
+<div class="outline-text-4" id="text-2-0-1">
+<p>
+By considering the delooping of a monoidal category, we identify its Drinfeld centre with the category of pseudonatural transformations of the identity functor.
+This idea is then extended to incorporate centres of bimodule categories, allowing to explain the "dual" bimodule categories studied by T. Zorman and me  in <i>Pivotality, twisted centres and the anti-double of a Hopf monad</i>.
+</p>
+</div>
+</div>
+<div id="outline-container-org0ce0959" class="outline-4">
+<h4 id="org0ce0959"><span class="section-number-4">2.0.2.</span> S. Halbig and T. Zorman. <a href="https://link.springer.com/article/10.1007/s10485-024-09778-9">Diagrammatics for Comodule Monads</a>. Appl. Categ. Struct. (2023).</h4>
+<div class="outline-text-4" id="text-2-0-2">
+<p>
+S. Willteron introduced a diagrammatical calculus to study Hopf monads.
+We extend it to incorporate comodule monads—the monadic version of comodule algebras—and use it to establish a bijection between the comodoule monad structures on a monad and the module category structures on its Eilenberg–Moore category.
+</p>
+</div>
+</div>
+<div id="outline-container-org9639605" class="outline-4">
+<h4 id="org9639605"><span class="section-number-4">2.0.3.</span> S. Halbig and T. Zorman. <a href="http://www.tac.mta.ca/tac/volumes/41/4/41-04abs.html">Pivotality, twisted centres and the anti-double of a Hopf monad</a>. Theory Appl. Categ. (2024).</h4>
+<div class="outline-text-4" id="text-2-0-3">
+<p>
+The coefficients of Hopf cyclic homology form the category of stable anti-Yetter–Drinfeld modules.
+If the underlying Hopf algebra is finite-dimensional, the anti-Yetter–Drinfeld modules can be identified with the representations of the anti-Drinfeld double.
+In this setting the following are equivalent:
+</p>
+<ul class="org-ul">
+<li>the Drinfeld and anti-Drinfeld double are isomorphic as algebras,</li>
+<li>there exists a one-dimensional anti-Yetter–Drinfeld module, and</li>
+<li>the square of the antipode is implemented by a combined adjoint action of a group-like and a character.</li>
+</ul>
+<p>
+This yields in particular a classification of the pivotal elements of the Drinfeld double of the Hopf algebra and has therefore applications in areas such as TQFTs.
+</p>
+
+<p>
+In this work, we generalise the above correspondence to arbitrary monoidal categories using the language of braided module categories.
+As in the Hopf algebraic case, we construct a canonical map between invertible objects in the anti-centre (the analogue of one-dimensional anti-Yetter–Drinfeld modules) and pivotal structures on the Drinfeld centres.
+By considering an example coming from knot-theory, we show that this map needs not be surjective, thereby answering a question of Shimizu.
+To reconcile the categorical with the Hopf algebraic picture, we provide a Hopf monadic interpretation of our findings.
+</p>
+</div>
+</div>
+<div id="outline-container-org7f6f53b" class="outline-4">
+<h4 id="org7f6f53b"><span class="section-number-4">2.0.4.</span> S. Halbig. <a href="https://www.tandfonline.com/doi/full/10.1080/00927872.2021.1939043">Generalized Taft algebras and pairs in involution</a>. Commun. Algebra. (2021).</h4>
+<div class="outline-text-4" id="text-2-0-4">
+<p>
+For a finite-dimensional Hopf algebra, it is a natural question to ask if the square of the antipode satisfies an analogue of Radford's S⁴-formula. Equivalently: is its Drinfeld double always pivotal?
+By studying bosonisations of Nichols algebras of diagonal type over abelian groups, this question translates to the solvability  of Diophantine equations.
+We show that some of these equations do not admit any solutions and therefore not all Drinfeld doubles are pivotal.
+</p>
+</div>
+</div>
+<div id="outline-container-orgb948b55" class="outline-4">
+<h4 id="orgb948b55"><span class="section-number-4">2.0.5.</span> S. Halbig and U. Krähmer <a href="https://link.springer.com/chapter/10.1007/978-3-030-34072-8_14">A Hopf algebra without a modular pair in involution</a>. Geom. Methods in Physics XXXVII. (2019).</h4>
+<div class="outline-text-4" id="text-2-0-5">
+<p>
+Modular pairs in involution are the one-dimensional coefficients of Hopf-cyclic homology. Hajac raised the question whether all finite-dimensional Hopf algebras admit such pairs. We show that there are Hopf algebras of dimension \(p^{3}\) for \(p\) a prime answer where this is not the case.
+</p>
+</div>
+</div>
+</section>
+<section id="outline-container-org2dc1f56" class="outline-2">
+<h2 id="org2dc1f56"><span class="section-number-2">3.</span> Other publications</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+A digital version of my PhD thesis, written under the supervision of <a href="https://tu-dresden.de/mn/math/geometrie/kraehmer">Ulrich Krähmer</a> can be found <a href="https://tud.qucosa.de/api/qucosa%3A80342/attachment/ATT-0/">here</a>.
+</p>
+</div>
+</section>
+</article>
+<footer id="postamble" class="status">
+<p class="author">Author: Sebastian Halbig</p>
+<p class="date">Created: 2025-12-05 Fri 17:55</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</footer>
+</body>
+</html>

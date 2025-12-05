@@ -1,0 +1,78 @@
+#+bibliography: ~/Documents/mathematics/literature/literature.bib
+#+HTML_HEAD: <link rel="stylesheet" href="./tufte.css" type="text/css" />
+@@html:
+<div class="header">
+  <span class="title" id="title-left"><a href="index.html">Sebastian Halbig</a></span>
+  <span class="nav-links" id="title-right">
+    <a href="publications.html">Publications</a>
+    <a href="teaching.html">Teaching</a>
+    <a href="games/braid-trivialiser.html">Math games</a>
+    <a href="cv.html">CV</a>
+  </span>
+</div>
+@@
+
+Preprints of articles by my coauthors and me can be found on the [[https://arxiv.org/search/?query=Halbig%2C+Sebastian&searchtype=author&abstracts=show&order=-announced_date_first&size=50][arXiv]].
+Reviews and an overview of all published articles are on [[https://zbmath.org/authors/halbig.sebastian][zbMATH]].
+
+*** Preprints
+***** C. Lomp and S. Halbig. [[https://arxiv.org/abs/2511.11047][Irreducible representations of generalised Kac–Paljutkin Hopf algebras.]] (2025).
+
+Generalised Kac–Paljutkin algebras were introduced by Christian Lomp as crossed products of two group algebras. These are  semisimple, non-commutative, non-cocommutative finite-dimensional Hopf algebras.
+In this note, we show that generalised Kac–Paljutkin algebras are isomorphic as algebras (but not as Hopf algebras) to group algebras.
+This we use to classify their simple representations in terms of tuples of Young tableaux.
+
+***** U. Krähmer and S. Halbig. [[https://arxiv.org/abs/2506.09249][A non-semisimple Kitaev lattice model]]. (2025).
+
+A major problem in quantum computing is that quantum states cannot be copied, which implies that classical error-correction strategies cannot be applied.
+An ingenious solution to this issue was proposed by A. Kitaev by combining topological properties of surfaces with the representation theory of Drinfeld doubles of group algebras. This model, now known as the Kitaev (quantum double) model, is one of the most-studied proposals for topological quantum computing and has seen various generalisations.
+Despite its extensive investigation however, the algebraic side of the model was so far always assumed to be semisimple.
+
+In our joint work, we develop a non-semisimple analogue for the Kitaev model. This comes with some notable changes compared to the classical approach:
++ We introduce coefficients (involutive Hopf bimodules) to the model.
+  These are closely related to structures arising in Hopf-cyclic homology.
+  These can be chosen to be trivial if and only if the antipode of the Hopf algebra squares to the identity and in this case one recovers the classical (semisimple) Kitaev model.
++ The projectors onto invariant subspaces are replaced by bitensor products.
+  These measure the difference between the coinvariant subspace (with respect to the coaction) and invariant subspace (with respect to the action) of a Yetter–Drinfeld module.
++ Topological invariance is established via a Mayer–Vietoris-type sequence which tracks how gluing surfaces togther affects the algebraic side of the model.
+
+A particularly interesting choice for the algebraic input datum of the theory are small quantum groups and, more generally, bosonisations of Nichols algebras. In this setting, we develop a reduction formalism, allowing to compute the topologically protected spaces of the models in terms of the representations of the Cartan part.
+
+***** S. Halbig and T. Zorman. [[https://arxiv.org/abs/2301.03545][Duality in Monoidal Categories]]. (2023).
+A module over a commutative ring is finitely-generated projective  if and only if tensoring with this module is left adjoint to tensoring with its dual.
+Finitely-generated modules have many favourable properties; for example, they admit dual bases, which can be used to take traces of endomorphism.
+In categorical terms, finitely-generated modules are the rigidly dualisable objects of the representation category of a commutative ring.
+C. Heunen raised the question whether the rigidly dualisable objects of a monoidal category coincide with the "tensor-representable" objects; objects such that tensoring with them is left adjoint to tensoring with a "dual" object.
+We answer his question in the negative and show that for \(\mathfrak{sl}_{2}\)-crystals all objects are tensor-representable but only direct sums of the monoidal unit are rigidly dualisable.
+
+*** Published articles
+***** B. Femić and S. Halbig. [[https://doiserbia.nb.rs/Article.aspx?ID=0350-13022531001F][Categorical centers and Yetter–Drinfel`d-modules as 2-categorical (bi)lax structures]]. Publ. Inst. Math., Nouv. Sér. (2025).
+By considering the delooping of a monoidal category, we identify its Drinfeld centre with the category of pseudonatural transformations of the identity functor.
+This idea is then extended to incorporate centres of bimodule categories, allowing to explain the "dual" bimodule categories studied by T. Zorman and me  in /Pivotality, twisted centres and the anti-double of a Hopf monad/.
+***** S. Halbig and T. Zorman. [[https://link.springer.com/article/10.1007/s10485-024-09778-9][Diagrammatics for Comodule Monads]]. Appl. Categ. Struct. (2023).
+S. Willteron introduced a diagrammatical calculus to study Hopf monads.
+We extend it to incorporate comodule monads—the monadic version of comodule algebras—and use it to establish a bijection between the comodoule monad structures on a monad and the module category structures on its Eilenberg–Moore category.
+***** S. Halbig and T. Zorman. [[http://www.tac.mta.ca/tac/volumes/41/4/41-04abs.html][Pivotality, twisted centres and the anti-double of a Hopf monad]]. Theory Appl. Categ. (2024).
+The coefficients of Hopf cyclic homology form the category of stable anti-Yetter–Drinfeld modules.
+If the underlying Hopf algebra is finite-dimensional, the anti-Yetter–Drinfeld modules can be identified with the representations of the anti-Drinfeld double.
+In this setting the following are equivalent:
+- the Drinfeld and anti-Drinfeld double are isomorphic as algebras,
+- there exists a one-dimensional anti-Yetter–Drinfeld module, and
+- the square of the antipode is implemented by a combined adjoint action of a group-like and a character.
+This yields in particular a classification of the pivotal elements of the Drinfeld double of the Hopf algebra and has therefore applications in areas such as TQFTs.
+
+In this work, we generalise the above correspondence to arbitrary monoidal categories using the language of braided module categories.
+As in the Hopf algebraic case, we construct a canonical map between invertible objects in the anti-centre (the analogue of one-dimensional anti-Yetter–Drinfeld modules) and pivotal structures on the Drinfeld centres.
+By considering an example coming from knot-theory, we show that this map needs not be surjective, thereby answering a question of Shimizu.
+To reconcile the categorical with the Hopf algebraic picture, we provide a Hopf monadic interpretation of our findings.
+***** S. Halbig. [[https://www.tandfonline.com/doi/full/10.1080/00927872.2021.1939043][Generalized Taft algebras and pairs in involution]]. Commun. Algebra. (2021).
+For a finite-dimensional Hopf algebra, it is a natural question to ask if the square of the antipode satisfies an analogue of Radford's S⁴-formula. Equivalently: is its Drinfeld double always pivotal?
+By studying bosonisations of Nichols algebras of diagonal type over abelian groups, this question translates to the solvability  of Diophantine equations.
+We show that some of these equations do not admit any solutions and therefore not all Drinfeld doubles are pivotal.
+***** S. Halbig and U. Krähmer [[https://link.springer.com/chapter/10.1007/978-3-030-34072-8_14][A Hopf algebra without a modular pair in involution]]. Geom. Methods in Physics XXXVII. (2019).
+Modular pairs in involution are the one-dimensional coefficients of Hopf-cyclic homology. Hajac raised the question whether all finite-dimensional Hopf algebras admit such pairs. We show that there are Hopf algebras of dimension \(p^{3}\) for \(p\) a prime answer where this is not the case.
+
+*** Other publications
+A digital version of my PhD thesis, written under the supervision of [[https://tu-dresden.de/mn/math/geometrie/kraehmer][Ulrich Krähmer]] can be found [[https://tud.qucosa.de/api/qucosa%3A80342/attachment/ATT-0/][here]].
+
+#+OPTIONS: toc:nil

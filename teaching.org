@@ -1,0 +1,24 @@
+#+bibliography: ~/Documents/mathematics/literature/literature.bib
+#+HTML_HEAD: <link rel="stylesheet" href="./tufte.css" type="text/css" />
+@@html:
+<div class="header">
+  <span class="title" id="title-left"><a href="index.html">Sebastian Halbig</a></span>
+  <span class="nav-links" id="title-right">
+    <a href="publications.html">Publications</a>
+    <a href="teaching.html">Teaching</a>
+    <a href="games/braid-trivialiser.html">Math games</a>
+    <a href="cv.html">CV</a>
+  </span>
+</div>
+@@
+
+Below you can find lecture notes from courses I have taught.
+Comments are very welcome!
+
+**** [[file:notes/rep-theo.pdf][Representation theory of finite groups (2024)]]
+Taught in German.
+
+**** Quantum computing (2026)
+Upcoming. The Lecture notes will be in English.
+
+#+OPTIONS: toc:nil

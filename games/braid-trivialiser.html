@@ -1,0 +1,767 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>A Braid group puzzle</title>
+    <style>
+      :root{--accent:#3a9ab2;--muted:#414141}
+      body{font-family: "Open Sans", sans-serif;
+           color: #424451; /* greyish-black */
+           background: #fbfdf8; /* greenish-white */
+           margin:0;padding:16px}
+      header{display:flex;gap:16px;align-items:center}
+      h1{font-size:60px;margin:0}
+      .panel{border:1px solid #424451;padding:12px;border-radius:10px}
+      select,input[type=number],input[type=text]{background:transparent;border:1px solid #424451;color:inherit;padding:6px;border-radius:6px}
+      button{background:var(--accent);color:#022;padding:8px 12px;border-radius:8px;border:none;cursor:pointer}
+      .row{display:flex;gap:12px}
+      #relations{min-height:80px}
+      .word-area{overflow:auto;padding:8px;border-radius:8px;background:linear-gradient(180deg, rgba(255,255,255,0.012), transparent);}
+      .crossing{display:block;margin:auto;border-radius:6px;cursor:pointer;max-width:266px}
+      .selected{outline:2px solid rgba(125,211,252,0.18);box-shadow:0 6px 18px rgba(7,28,40,0.6)}
+      .small{font-size:30px;
+             color:var(--muted)}
+      footer{margin-top:14px;color:var(--muted);font-size:13px}
+      svg{display:block}
+      .info{max-width:420px}
+      .big{font-size:25px}
+      .relation-btn{background:transparent;border:3px solid #000;padding:8px;border-radius:8px;margin:6px;cursor:pointer;display:flex;align-items:center;gap:8px}
+      .relation-btn:hover{transform:translateY(-3px)}
+      .win{color:#1d1d1d;font-weight:700; font-size:80px}
+      main{display:flex;flex-direction:column;gap:12px;margin-top:14px}
+      .controls{display:flex;gap:8px;align-items:center}
+      .centered{display:flex;flex-direction:column;align-items:center}
+      .relation-name{font-size:30px; color:var(--muted);text-align:center}
+      header { margin-right:-32px}
+      .header {
+          display:flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          margin-top: -16px;
+          margin-bottom: 0em;
+          margin-left: -16px;
+          font-weight: 600;
+          text-align: center;
+          padding-top: 1em;
+          padding-bottom: 1em;
+          background-color: #d1d8dd;
+          border-bottom: 3px solid #999999;
+      }
+      a:link,
+      a:visited {
+              color: inherit;
+              text-underline-offset: 0.1em;
+              text-decoration-thickness: 0.05em;
+      }
+      #title-left{padding-left: 1.5em;}
+
+      #title-right{
+          padding-right: 1.5em;
+      }
+
+      .header span a, .header span a{
+          padding-left: 0.5em;
+          padding-right:0.5em
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <span class="title" id="title-left"><a href="./../index.html">Sebastian Halbig</a></span>
+        <span class="nav-links" id="title-right">
+          <a href="./../publications.html">Publications</a>
+          <a href="./../teaching.html">Teaching</a>
+          <a href="./../braid-trivialiser.html">Math games</a>
+          <a href="./../cv.html">CV</a>
+        </span>
+      </div>
+    </header>
+      <div>
+        <h1>A Braid group puzzle</h1>
+        <div class="small">Click to select contiguous crossings, then apply braid relations to remove all over- and undercrossings.</div>
+      </div>
+      <div style="margin-left:auto;text-align:right" class="small">
+        <div>Time: <span id="timer">00:00</span></div>
+        <div>Moves: <span id="moves">0</span></div>
+      </div>
+
+    <main>
+      <section class="panel">
+        <div style="display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap">
+          <div class="info">
+            <div class="small">Strands</div>
+            <div class="big"><select id="nstrands"><option>4</option><option>5</option><option>6</option></select></div>
+          </div>
+          <div class="info">
+            <div class="small">Difficulty</div>
+            <div class="big"><select id="difficulty"><option value="5">Easy</option><option value="8">Medium</option><option value="14">Hard</option></select></div>
+          </div>
+          <div>
+            <div class="small" style="visibility: hidden;">Seed (optional)</div>
+            <input id="seed" placeholder="random" style="visibility: hidden;"/>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <button id="newGame">New game</button>
+            <button id="shuffle">Scramble (mix relations)</button>
+          </div>
+        </div>
+
+        <hr style="margin:12px 0;border:none;border-top:1px dashed rgba(255,255,255,0.03)" />
+
+        <!-- Cheatsheet (will hide on start) -->
+        <div class="panel" id="cheatsheet">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+            <div class="small"> You can use these and similar patterns. Click "Start game" to  start the timer and begin the game.</div>
+            <div style="display:flex;gap:8px;align-items:center">
+              <button id="startGame">Start game</button>
+            </div>
+          </div>
+          <div style="margin-top:8px;display:flex;gap:120px;justify-content:center;">
+            <!-- tiny examples -->
+            <div class="small centered panel" style="padding:8px;min-width:160px">
+              <div style="width:180px;height:120px" id="ex-cancel"></div>
+              <div class="relation-name">Cancellation</div>
+            </div>
+            <div class="small centered panel" style="padding:8px;min-width:220px">
+              <div style="width:220px;height:120px" id="ex-ybe"></div>
+              <div class="relation-name">Yang–Baxter</div>
+            </div>
+            <div class="small centered panel" style="padding:8px;min-width:200px">
+              <div style="width:260px;height:120px" id="ex-comm"></div>
+              <div class="relation-name">Commutation</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="word-area panel" id="wordArea" style="min-height:160px">
+          <!-- word rendered here (one column, stacked) -->
+        </div>
+
+        <div class="panel" style="margin-top:12px;display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap; position: sticky;
+                                  bottom: 0; background-color:#94a3b8; width:inherit;">
+          <div id="relations" class="small" style="color: var(--muted)">Select contiguous letters to see applicable relations.</div>
+          <div style="display:flex;gap:8px">
+            <button id="undo">Undo</button>
+          </div>
+        </div>
+
+      </section>
+    </main>
+
+    <script>
+
+      // ---------------------
+      // Game logic
+      // ---------------------
+
+      var state = { n:0,
+                    relations:[],
+                    word:[],
+                    selection:new Set(),
+                    history:[],
+                    moves:0,
+                    running:false,
+                    startTime:0,
+                    timerInterval:null,
+                    rng:Math.random
+                  };
+      var wordArea = document.getElementById('wordArea');
+      var timerEl = document.getElementById('timer');
+      var movesEl = document.getElementById('moves');
+      var relationsEl = document.getElementById('relations');
+
+      // Helper function to format the word W for comparison (used for uniqueness in relations)
+      function wordToString(W) {
+          // Format each element {i: index, s: sign} as s_i^(+/-)
+          return W.map(function(elt) {
+              return "s" + elt.i + (elt.s === 1 ? "+" : "-");
+          }).join(" ");
+      }
+
+      function seededRandom(seed){
+          if(seed==null||seed==='')
+              return Math.random;
+          var s=0;
+          for(var i=0;i<seed.length;i++)
+              s=(s*31+seed.charCodeAt(i))|0;
+          return function(){
+              s = (s + 0x6D2B79F5) | 0;
+              var t = Math.imul(s ^ s>>>15, 1 | s);
+              t = (t + Math.imul(t ^ t>>>7, 61 | t)) ^ t;
+              return ((t ^ t>>>14) >>> 0) / 4294967296; };
+      }
+
+      function invertWord(word){
+          return word.slice().reverse().map(function(x){
+              return {i:x.i, s:-x.s}; });
+      }
+
+      function generateBraidRelations(n) {
+
+          var relations = [];
+          var seenRelations = {}; // Tracks unique pairs {A, B}
+          var maxIndex = n - 1;
+          var signs = [1, -1];
+          const EMPTY_WORD = []; // Represents the identity element 'e'
+
+          function addRelation(A, B) {
+              var strA = wordToString(A);
+              var strB = wordToString(B);
+
+              // Create a unique key for the pair {A, B} by sorting the strings
+              var canonicalKey = strA < strB ? strA + " = " + strB : strB + " = " + strA;
+
+              if (!seenRelations[canonicalKey]) {
+                  seenRelations[canonicalKey] = true;
+                  relations.push({lhs: A, rhs: B});
+                  if (strA !== strB) {
+                      relations.push({lhs: B, rhs: A});
+                  }
+              }
+          }
+
+          // --- 0. Cancellation Relations
+          for (var k = 1; k <= maxIndex; k++) {
+              for (var s of signs) {
+                  addRelation(
+                      [{i: k, s: s}, {i: k, s: -s}],
+                      EMPTY_WORD
+                  );
+              }}
+
+          // --- 1. Commutativity Relation (R1)
+          for (var k = 1; k <= maxIndex - 2; k++) {
+              for (var j = k + 2; j <= maxIndex; j++) {
+                  for (var sign_k of signs) {
+                      for (var sign_j of signs) {
+                          var lhs = [{i: k, s: sign_k}, {i: j, s: sign_j}];
+                          var rhs = [{i: j, s: sign_j}, {i: k, s: sign_k}];
+                          addRelation(lhs, rhs);
+                      }}}}
+
+          // --- 2. Braid Relation (R2)
+          for (var k = 1; k <= maxIndex - 1; k++) {
+              for (var a of signs) {
+                  for (var b of signs) {
+                      var lhs = [{i: k, s: b}, {i: k+1, s: a}, {i: k, s: a}];
+                      var rhs = [{i: k+1, s: a}, {i: k, s: a}, {i: k+1, s: b}];
+                      addRelation(lhs, rhs);
+                      var lhs = [{i: k+1, s: b}, {i: k, s: a}, {i: k+1, s: a}];
+                      var rhs = [{i: k, s: a}, {i: k+1, s: a}, {i: k, s: b}];
+                      addRelation(lhs, rhs);
+                  }}}
+          return relations;
+      }
+
+
+      // Helper to check if two words are identical
+      function areWordsEqual(W1, W2) {
+          if (W1.length !== W2.length) return false;
+          for (let i = 0; i < W1.length; i++) {
+              // Must check index (i) and sign (s)
+              if (W1[i].i !== W2[i].i || W1[i].s !== W2[i].s) {
+                  return false;
+              }
+          }
+          return true;
+      }
+
+      function applyRandomRelationMove(W, relations, rng, lastMove) {
+          if (W.length === 0) return {word: W, move: lastMove};
+
+          var r2Moves = [];
+          var r1Moves = [];
+
+          // ... (areWordsEqual and move categorization logic remains the same) ...
+          // Note: The move categorization logic from the previous response is assumed here.
+
+          // 1. Scan for all possible moves and categorize them
+          for (var p = 0; p < W.length; p++) {
+              for (var rel of relations) {
+                  var len = rel.lhs.length;
+                  if (p + len <= W.length) {
+                      var subWord = W.slice(p, p + len);
+
+                      if (areWordsEqual(subWord, rel.lhs)) {
+
+                          if (lastMove.pos === p &&
+                              areWordsEqual(rel.lhs, lastMove.replacement) &&
+                              areWordsEqual(rel.rhs, lastMove.originalSegment))
+                          {
+                              continue;
+                          }
+
+                          var move = {
+                              pos: p,
+                              len: len,
+                              replacement: rel.rhs,
+                              originalSegment: subWord,
+                              relLHS: rel.lhs, // Store the relation LHS for logging
+                              relRHS: rel.rhs  // Store the relation RHS for logging
+                          };
+
+                          if (len === 3) {
+                              r2Moves.push(move);
+                          } else if (len === 2) {
+                              r1Moves.push(move);
+                          }
+                      }
+                  }
+              }
+          }
+
+          var movesToApply = [];
+
+          if (r2Moves.length > 0) {
+              movesToApply = r2Moves;
+          } else if (r1Moves.length > 0) {
+              movesToApply = r1Moves;
+          } else {
+              return {word: W, move: lastMove};
+          }
+
+          var move = movesToApply[Math.floor(rng() * movesToApply.length)];
+
+
+          W.splice(move.pos, move.len);
+          W.splice.apply(W, [move.pos, 0].concat(move.replacement));
+
+          var nextMoveState = {
+              pos: move.pos,
+              originalSegment: move.originalSegment,
+              replacement: move.replacement
+          };
+
+          return {word: W, move: nextMoveState};
+      }
+
+      function generateTrivialWord(n, targetLen, rng){
+          var W = [];
+          var allRelations = state.relations;
+          var mixableRelations = allRelations.filter(rel => rel.lhs.length === rel.rhs.length);
+          var YBERelations = allRelations.filter(rel => rel.lhs.length === 3);
+          var currentLength = 0;
+
+          while (currentLength < targetLen) {
+              var rel = YBERelations[Math.floor(rng() * YBERelations.length)];
+              if (currentLength + rel.lhs.length > targetLen + 3) {
+                  break;
+              }
+              W = W.concat(rel.lhs);
+              currentLength = W.length;
+          }
+
+          W = W.concat(invertWord(W));
+
+          var mixOps = 20;
+          // Initialize move state
+          var lastMove = {pos: -1, originalSegment: [], replacement: []};
+
+
+          for (var t = 0; t < mixOps; t++) {
+              var result = applyRandomRelationMove(W, mixableRelations, rng, lastMove);
+              W = result.word;
+              lastMove = result.move;
+          }
+          return W;
+      }
+
+      function renderWord(){
+          wordArea.innerHTML='';
+          var w = state.word;
+          var n = state.n;
+          if(w.length===0){
+              var win = document.createElement('div');
+              win.className='panel win';
+              win.textContent='You trivialised the braid!';
+              wordArea.appendChild(win);
+              stopTimer();
+              return; }
+          w.forEach(function(letter, idx){
+              var div = document.createElement('div');
+              div.className='crossing';
+              if(state.selection.has(idx)) div.classList.add('selected');
+              div.dataset.idx=idx;
+              var svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
+              svg.setAttribute('width',960);
+              svg.setAttribute('height',34);
+              svg.setAttribute('viewBox', '0 0 ' + 960 + ' ' + 34);
+              var g = drawSingleBraiding(n, letter.i, letter.s, 960, 34);
+              svg.appendChild(g);
+              div.appendChild(svg);
+              div.addEventListener('click', function(){ toggleSelection(idx); });
+              wordArea.appendChild(div);
+          });
+      }
+
+      function toggleSelection(idx){
+          if(state.selection.has(idx)) state.selection.delete(idx);
+          else state.selection.add(idx);
+          renderWord();
+          updateRelationsPanel(); }
+
+      function getSelectedIndices(){
+          var arr = Array.from(state.selection).sort(function(a,b){ return a-b; });
+          return arr; }
+
+      function isContiguous(arr){
+          if(arr.length===0) return false;
+          for(var i=1;i<arr.length;i++) if(arr[i]!==arr[i-1]+1) return false;
+          return true; }
+
+      function updateRelationsPanel(){
+          relationsEl.innerHTML='';
+          var sel = getSelectedIndices();
+          if(sel.length===0){
+              relationsEl.textContent='Select contiguous letters to see applicable relations.';
+              return;
+          }
+          if(!isContiguous(sel)){
+              relationsEl.innerHTML='<div class="small">Selection must be contiguous. Click letters to select a contiguous block.</div>';
+              return;
+          }
+          var a = sel[0], b = sel[sel.length-1];
+          var sub = state.word.slice(a,b+1);
+
+          var matches = [];
+          for (const rel of state.relations) {
+              if (areWordsEqual(sub, rel.rhs)) {
+                  matches.push({
+                      lhs: rel.rhs, // The selected word matches rel.rhs
+                      rhs: rel.lhs, // Replace with rel.lhs
+                      name: `Apply: $${wordToString(rel.rhs)} \\rightarrow ${wordToString(rel.lhs)}\$`,
+                  });
+              }
+          }
+
+          if(matches.length===0){
+              relationsEl.innerHTML='<div class="small">No exact relations match the selected block.</div>';
+              return;
+          }
+          matches.forEach(
+              function(match){
+                  var btn = document.createElement('button');
+                  btn.className='relation-btn';
+
+                  var label = document.createElement('div');
+                  label.className='relation-name';
+                  label.textContent = 'Click here to apply: ';
+                  btn.appendChild(label);
+
+                  var visualRelation = { lhs: match.lhs, rhs: match.rhs };
+                  var relSvg = createSVGFromRelation(visualRelation, 220, 70);
+                  btn.appendChild(relSvg);
+                  btn.addEventListener('click', function(){
+                      applyRelation(a, match.lhs, match.rhs);
+                  });
+                  relationsEl.appendChild(btn);
+              });
+      }
+
+      function applyRelation(startIndex, lhs, rhs) {
+          // 1. Record the action for history
+          // Add the *current* word state to the history stack for undo
+          state.history.push(JSON.parse(JSON.stringify(state.word)));
+
+          // The number of elements to delete is the length of the LHS.
+          const subWordLength = lhs.length;
+
+          // 2. Perform the word replacement (in-place modification)
+          // splice(start, deleteCount, ...itemsToAdd)
+          state.word.splice(startIndex, subWordLength, ...rhs);
+
+          // 3. Update game state
+          state.selection.clear();
+          state.moves += 1;
+          updateMovesDisplay();
+          renderWord();
+          updateRelationsPanel();
+      }
+
+      function updateMovesDisplay() {
+          movesEl.textContent = state.moves;
+      }
+      document.getElementById('undo').addEventListener('click', function(){
+          if(state.history.length===0) return;
+          state.word = state.history.pop();
+          state.selection.clear();
+          state.moves = Math.max(0,state.moves-1);
+          movesEl.textContent = state.moves;
+          renderWord();
+          updateRelationsPanel();
+      });
+
+      // Timer
+      function startTimer(){
+          if(state.timerInterval) clearInterval(state.timerInterval);
+          state.running=true;
+          state.startTime=Date.now();
+          timerEl.textContent='00:00';
+          state.timerInterval=setInterval(
+              function(){
+                  var s=Math.floor((Date.now()-state.startTime)/1000);
+                  var mm=String(Math.floor(s/60)).padStart(2,'0');
+                  var ss=String(s%60).padStart(2,'0');
+                  timerEl.textContent=mm+':'+ss;
+              },250);
+      }
+      function stopTimer(){
+          if(state.timerInterval){
+              clearInterval(state.timerInterval);
+              state.timerInterval=null;
+              state.running=false;
+          } }
+
+      // New game / scramble
+      function setupNewGame(){
+          var n = parseInt(document.getElementById('nstrands').value,10);
+          var len = parseInt(document.getElementById('difficulty').value,10);
+          var seed = document.getElementById('seed').value.trim();
+          state.n=n;
+          state.rng=seededRandom(seed);
+          state.relations = generateBraidRelations(n)
+          state.word = generateTrivialWord(n,len,state.rng);
+          state.selection.clear();
+          state.history=[];
+          state.moves=0;
+          movesEl.textContent='0';
+          renderWord();
+          updateRelationsPanel();
+          startTimer();
+      }
+
+      document.getElementById('newGame').addEventListener('click', function(){
+          document.getElementById('cheatsheet').style.display='none';
+          setupNewGame();});
+      document.getElementById('shuffle').addEventListener('click', function(){
+          var rng = state.rng || Math.random;
+          var ops = 10 + Math.floor(rng()*40);
+          while(ops-->0){
+              var w = state.word;
+              if(w.length<2) break;
+              var p = Math.floor(rng()*(w.length-1));
+              var A=w[p], B=w[p+1];
+              if(Math.abs(A.i-B.i)>=2){
+                  if(rng()<0.6) {
+                      state.word.splice(p,2,B,A);
+                  }
+              } else if(p+2<w.length){
+                  var C=w[p+2];
+                  if(A.i===C.i && Math.abs(A.i-B.i)===1 && A.s===B.s && B.s===C.s){
+                      state.word.splice(p,3, {i:B.i,s:B.s},{i:A.i,s:A.s},{i:B.i,s:B.s});
+                  }}}
+          state.selection.clear();
+          renderWord();
+          updateRelationsPanel();
+      });
+
+      // Start game button hides cheatsheet and starts
+      document.getElementById('startGame').addEventListener('click', function(){
+          document.getElementById('cheatsheet').style.display='none';
+          setupNewGame();
+
+      });
+
+      // populate small examples in cheatsheet
+      function populateExamples(){
+          // 1. Cancellation (Inverse) Relation: s_i s_i^{-1} = 1
+          var relationCancel = {
+              lhs: [{i: 1, s: 1}, {i: 1, s: -1}],
+              rhs: [] // Empty word represents the identity element
+          };
+          var exCancel = document.getElementById('ex-cancel');
+          exCancel.appendChild(createSVGFromRelation(relationCancel));
+
+
+          // 2. Yang-Baxter Equation (Braid Relation): s_i s_{i+1} s_i = s_{i+1} s_i s_{i+1} (using i=1)
+          var relationYBE = {
+              lhs: [{i: 1, s: 1}, {i: 2, s: 1}, {i: 1, s: 1}],
+              rhs: [{i: 2, s: 1}, {i: 1, s: 1}, {i: 2, s: 1}]
+          };
+          var exYbe = document.getElementById('ex-ybe');
+          exYbe.appendChild(createSVGFromRelation(relationYBE));
+
+          // 3. Commutation (Far Apart): s_i s_j = s_j s_i for |i-j| > 1 (using i=1, j=3)
+          // The index shifting ensures the visualization uses only strands 1, 2, 3, 4 (n=4 strands total).
+          var relationCommute = {
+              lhs: [{i: 1, s: 1}, {i: 3, s: 1}],
+              rhs: [{i: 3, s: 1}, {i: 1, s: 1}]
+          };
+          var exComm = document.getElementById('ex-comm');
+          exComm.appendChild(createSVGFromRelation(relationCommute));
+      }
+
+      window.addEventListener('load', function(){ populateExamples();});
+
+      function drawSingleBraiding(n, index, sign, width, height){
+          width = width || 160;
+          height = height || 80;
+          var g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+
+          var gap = Math.min(20, Math.floor((width - 20) / (n)));
+          var left = 3;
+
+          for(var s = 1; s <= n; s++){
+              var isParallelStrand = (sign === 0) || (s !== index && s !== index + 1);
+              if (isParallelStrand) {
+                  var x = left + (s - 1) * gap;
+                  var line = document.createElementNS('http://www.w3.org/2000/svg','line');
+                  line.setAttribute('x1',x);
+                  line.setAttribute('x2',x);
+                  line.setAttribute('y1',0);
+                  line.setAttribute('y2',height);
+                  line.setAttribute('stroke','#000');
+                  line.setAttribute('stroke-width',4);
+                  g.appendChild(line);
+              }
+          }
+
+          if (sign === 0) {
+              return g;
+          }
+
+          // 2. Determine crossing coordinates for strands i and i+1
+          var x1, x2;
+          if(sign > 0){
+              x1 = left + (index-1)*gap; // Over strand start X (left)
+              x2 = left + index*gap;     // Under strand start X (right)
+          } else {
+              x1 = left + index*gap;     // Over strand start X (right)
+              x2 = left + (index-1)*gap; // Under strand start X (left)
+          }
+
+          // Path 2 (Under Strand: starts at x2, ends at x1)
+          var path2 = document.createElementNS('http://www.w3.org/2000/svg','path');
+          path2.setAttribute('d', 'M '+ x2+ ' 0 C '+ x2 +' ' + Math.floor(2*height/3) + ' ' + x1 + ' ' + Math.floor(height/3) + ' ' + x1 + ' ' + height);
+          path2.setAttribute('stroke','#000');
+          path2.setAttribute('stroke-width',4);
+          path2.setAttribute('fill','none');
+          g.appendChild(path2);
+
+          // Path 1 (White bridge/Over Strand: starts at x1, ends at x2)
+          var path1 = document.createElementNS('http://www.w3.org/2000/svg','path');
+          path1.setAttribute('d', 'M '+ x1+ ' 0 C '+ x1 +' ' + Math.floor(2*height/3) + ' ' + x2 + ' ' + Math.floor(height/3) + ' ' + x2 + ' ' + height);
+          path1.setAttribute('stroke','#fbfdf8'); // Background color for the bridge
+          path1.setAttribute('stroke-width',10);
+          path1.setAttribute('fill','none');
+          g.appendChild(path1);
+
+          // Path 3 (Over Strand Outline: starts at x1, ends at x2)
+          var path3 = document.createElementNS('http://www.w3.org/2000/svg','path');
+          path3.setAttribute('d', 'M '+ x1+ ' 0 C '+ x1 +' ' + Math.floor(2*height/3) + ' ' + x2 + ' ' + Math.floor(height/3) + ' ' + x2 + ' ' + height);
+          path3.setAttribute('stroke','#000');
+          path3.setAttribute('stroke-width',4);
+          path3.setAttribute('fill','none');
+          g.appendChild(path3);
+
+          return g;
+      }
+
+      function drawBraidWord(word, n, svg, xOffset, singleCrossingHeight) {
+          var wordGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+          wordGroup.setAttribute('transform', 'translate(' + xOffset + ', 0)');
+          if (word.length === 0) {
+              var identityG = drawSingleBraiding(n, 1, 0, 160, singleCrossingHeight);
+              wordGroup.appendChild(identityG);
+          } else {
+              word.forEach(function(generator, k) {
+                  var crossingG = drawSingleBraiding(n, generator.i, generator.s, 160, singleCrossingHeight);
+                  crossingG.setAttribute('transform', 'translate(0, ' + (k * singleCrossingHeight) + ')');
+                  wordGroup.appendChild(crossingG);
+              });
+          }
+          svg.appendChild(wordGroup);
+      }
+
+      function createSVGFromRelation(relation, width, height){
+          width = width || 220;
+          var singleCrossingHeight = 34;
+          var originalLHS = relation.lhs;
+          var originalRHS = relation.rhs;
+
+          // --- Index Shifting Logic ---
+          var minIndex = Infinity;
+
+          function findMinIndex(word) {
+              word.forEach(g => {
+                  if (g.i < minIndex) minIndex = g.i;
+              });
+          }
+
+          findMinIndex(originalLHS);
+          findMinIndex(originalRHS);
+          if (minIndex === Infinity) minIndex = 1;
+
+          var indexShift = minIndex > 1 ? minIndex - 1 : 0;
+          var LHS = originalLHS.map(g => ({ i: g.i - indexShift, s: g.s }));
+          var RHS = originalRHS.map(g => ({ i: g.i - indexShift, s: g.s }));
+
+          var maxIndex = 0;
+          function findMaxIndex(word) {
+              word.forEach(g => {
+                  if (g.i > maxIndex) maxIndex = g.i;
+              });
+          }
+          findMaxIndex(LHS);
+          findMaxIndex(RHS);
+          var n = maxIndex + 1;
+
+          var maxLen = Math.max(LHS.length, RHS.length);
+          var wordLength = Math.max(1, maxLen);
+          var totalRelationHeight = wordLength * singleCrossingHeight;
+          var svgWidth = (n-1)*24+4;
+          var svgHeight = totalRelationHeight + 10; // + padding
+
+          // 3. Create Main HTML Container
+          var container = document.createElement('div');
+          container.style.display = 'flex';
+          container.style.alignItems = 'center';
+          container.style.justifyContent = 'center';
+          container.style.gap = '10px';
+
+          // --- Helper to create a styled panel with SVG ---
+          function createBraidPanel(word, bgColor) {
+              var panel = document.createElement('div');
+              panel.className = 'panel';
+              panel.style.backgroundColor = bgColor;
+              panel.style.minHeight = svgHeight + 'px'; // Ensure height consistency
+              panel.style.display = 'flex';
+              panel.style.alignItems = 'flex-start'; // Align content to the top
+              panel.style.padding = '5px'; // Padding inside the panel frame
+
+              var svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
+              svg.setAttribute('width', svgWidth);
+              svg.setAttribute('height', svgHeight);
+              svg.setAttribute('viewBox', '0 0 ' + svgWidth + ' ' + svgHeight);
+
+              var mainGroup = document.createElementNS('http://www.w3.org/2000/svg','g');
+              mainGroup.setAttribute('transform', 'translate(0, 5)');
+              svg.appendChild(mainGroup);
+
+              drawBraidWord(word, n, mainGroup, 0, Math.floor(totalRelationHeight/Math.max(1,word.length)));
+              panel.appendChild(svg);
+              return panel;
+          }
+
+          container.appendChild(createBraidPanel(LHS, '#fbfdf8')); // Light green/sky blue
+
+          // --- Separator ---
+          var separator = document.createElement('div');
+          separator.style.textAlign = 'center';
+          separator.style.fontSize = '16px';
+          separator.style.color = '#424451';
+          separator.style.minWidth = '50px';
+          separator.innerHTML = '<div style="font-weight: 500; margin-bottom: 2px;">becomes</div><div style="font-size: 24px;">&rarr;</div>';
+          container.appendChild(separator);
+
+          // --- RHS Panel ---
+          container.appendChild(createBraidPanel(RHS, '#fbfdf8')); // Light blue/mint green
+
+          return container;
+      }
+    </script>
+  </body>
+</html>
